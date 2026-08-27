@@ -44,7 +44,7 @@ export default function Navbar() {
         </div>
 
         <Link to="/" className="navbar-logo">
-          <img src="/logo.png" alt="Sal Gastronomia" className="logo-image" />
+          <img src="/assets/logo-sticky.png" alt="Sal Gastronomia" className="logo-image" />
         </Link>
 
         <div className="navbar-links-right">

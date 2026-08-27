@@ -32,7 +32,7 @@ export default function Contato() {
       <section className="contato-hero">
         <div className="contato-hero-bg">
           <img 
-            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80" 
+            src="/assets/img-maps-sal-gastronomia-2024fev.jpg" 
             alt="Contato" 
           />
           <div className="contato-hero-overlay"></div>
@@ -177,23 +177,11 @@ export default function Contato() {
 
       {/* Map Section */}
       <section className="map-section">
-        <div className="map-placeholder">
-          <div className="map-content">
-            <h3>Nossas Unidades</h3>
-            <p>
-              Shopping Cidade Jardim - Av. Magalhães de Castro, 12.000<br />
-              Bela Cintra - R. Bela Cintra, 1958
-            </p>
-            <a 
-              href="https://maps.google.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn btn-dark"
-            >
-              Ver no Mapa
-            </a>
-          </div>
-        </div>
+        <img 
+          src="/assets/img-maps-sal-gastronomia-2024fev.jpg" 
+          alt="Mapa Sal Gastronomia" 
+          className="map-image"
+        />
       </section>
     </div>
   )

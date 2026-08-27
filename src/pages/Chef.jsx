@@ -18,7 +18,7 @@ export default function Chef() {
       <section className="chef-hero">
         <div className="chef-hero-bg">
           <img 
-            src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=1920&q=80" 
+            src="/assets/Henrique-Fogaca1339-1-scaled.jpg" 
             alt="Chef Henrique Fogaça" 
           />
           <div className="chef-hero-overlay"></div>
@@ -49,13 +49,13 @@ export default function Chef() {
             >
               <div className="chef-main-image">
                 <img 
-                  src="/Chef Henrique.png" 
+                  src="/assets/Henrique-Fogaca1339-1-scaled.jpg" 
                   alt="Chef Henrique Fogaça" 
                 />
               </div>
               <div className="chef-accent-image">
                 <img 
-                  src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&q=80" 
+                  src="/assets/DSC01355-scaled.jpg" 
                   alt="Chef cozinhando" 
                 />
               </div>
@@ -193,7 +193,7 @@ export default function Chef() {
               transition={{ duration: 0.5 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" 
+                src="/assets/aligot.jpg" 
                 alt="Prato 1" 
               />
             </motion.div>
@@ -206,7 +206,7 @@ export default function Chef() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80" 
+                src="/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.jpg" 
                 alt="Prato 2" 
               />
             </motion.div>
@@ -219,7 +219,7 @@ export default function Chef() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" 
+                src="/assets/polenta-cremosa-com-linguica-300x300.jpg" 
                 alt="Prato 3" 
               />
             </motion.div>
@@ -232,7 +232,7 @@ export default function Chef() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" 
+                src="/assets/imagem-home-destaque-2-c-cav_.jpg" 
                 alt="Prato 4" 
               />
             </motion.div>

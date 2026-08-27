@@ -4,11 +4,9 @@ import { motion } from 'framer-motion'
 import './Home.css'
 
 const heroImages = [
-  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80',
-  'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80',
-  'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1920&q=80',
-  'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80',
-  'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&q=80',
+  '/assets/hero-1.jpg',
+  '/assets/hero-2.jpg',
+  '/assets/hero-3.jpg',
 ]
 
 const fadeUp = {
@@ -60,7 +58,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=800&q=80" 
+                src="/assets/ambiente-1.jpg" 
                 alt="Ambiente Sal Gastronomia" 
               />
             </motion.div>
@@ -117,7 +115,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <div className="featured-image">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Aligot" />
+                <img src="/assets/aligot.jpg" alt="Aligot" />
               </div>
               <div className="featured-info">
                 <h3>Aligot</h3>
@@ -134,7 +132,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="featured-image">
-                <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80" alt="Steak Tartare" />
+                <img src="/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.jpg" alt="Steak Tartare" />
               </div>
               <div className="featured-info">
                 <h3>Steak Tartare</h3>
@@ -151,7 +149,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="featured-image">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Polenta Cremosa" />
+                <img src="/assets/polenta-cremosa-com-linguica-300x300.jpg" alt="Polenta Cremosa" />
               </div>
               <div className="featured-info">
                 <h3>Polenta Cremosa</h3>
@@ -179,7 +177,7 @@ export default function Home() {
       <section className="reservation-cta">
         <div className="reservation-cta-bg">
           <img 
-            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80" 
+            src="/assets/parallax.jpg" 
             alt="Sal Gastronomia" 
           />
           <div className="reservation-cta-overlay"></div>

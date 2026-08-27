@@ -18,7 +18,7 @@ export default function Sobre() {
       <section className="sobre-hero">
         <div className="sobre-hero-bg">
           <img 
-            src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1920&q=80" 
+            src="/assets/ambiente-2.jpg" 
             alt="Sobre o Sal" 
           />
           <div className="sobre-hero-overlay"></div>
@@ -74,13 +74,13 @@ export default function Sobre() {
             >
               <div className="story-img-main">
                 <img 
-                  src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80" 
+                  src="/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.jpg" 
                   alt="Prato do Sal" 
                 />
               </div>
               <div className="story-img-accent">
                 <img 
-                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80" 
+                  src="/assets/ambiente-3.jpg" 
                   alt="Ambiente" 
                 />
               </div>

@@ -41,7 +41,7 @@ export default function Reservas() {
       <section className="reservas-hero">
         <div className="reservas-hero-bg">
           <img 
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80" 
+            src="/assets/hero-3.jpg" 
             alt="Reservas" 
           />
           <div className="reservas-hero-overlay"></div>

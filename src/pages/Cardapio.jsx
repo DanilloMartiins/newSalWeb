@@ -10,7 +10,7 @@ const dishes = [
     name: 'Aligot',
     description: 'Lombo de Cordeiro com purê de dois queijos, cogumelos e molho de jabuticaba',
     category: 'Pratos Principais',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80',
+    image: '/assets/aligot.jpg',
     highlight: true
   },
   {
@@ -18,7 +18,7 @@ const dishes = [
     name: 'Steak Tartare',
     description: 'Mignon com ovo de codorna frito e batata chips',
     category: 'Entradas',
-    image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80',
+    image: '/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.jpg',
     highlight: true
   },
   {
@@ -26,7 +26,7 @@ const dishes = [
     name: 'Polenta Cremosa',
     description: 'Com linguiça, requeijão e molho de tomate artesanal',
     category: 'Entradas',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80',
+    image: '/assets/polenta-cremosa-com-linguica-300x300.jpg',
     highlight: true
   },
   {
@@ -34,39 +34,39 @@ const dishes = [
     name: 'Burrata Sal Gastronomia',
     description: 'Burrata fresca com componentes da estação',
     category: 'Entradas',
-    image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=600&q=80',
+    image: '/assets/burrata_sal_gastronomia-300x300.jpg',
     highlight: false
   },
   {
     id: 5,
-    name: 'Risoto de Camarão',
-    description: 'Risoto cremoso com camarões grelhados e finalize de açafrão',
+    name: 'Prato da Casa',
+    description: 'Criação exclusiva da casa com ingredientes da estação',
     category: 'Pratos Principais',
-    image: 'https://images.unsplash.com/photo-1633504581786-316c8002b1b9?w=600&q=80',
+    image: '/assets/imagem-home-destaque-2-c-cav_.jpg',
     highlight: false
   },
   {
     id: 6,
-    name: 'Filé Mignon',
-    description: 'Com purê de batata trufado e legumes da estação',
+    name: 'Cupim do SAL',
+    description: 'Preparado na manteiga de garrafa, servido com mandioca cozida e farofa de banana',
     category: 'Pratos Principais',
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80',
+    image: '/assets/imagem-home-destaque-5-reservas-c-cav.jpg',
     highlight: false
   },
   {
     id: 7,
-    name: 'Petit Gâteau',
-    description: 'Bolinho de chocolate com sorvete de baunilha artesanal',
+    name: 'Pudim de Cumaru',
+    description: 'Com Calda de Frutas Vermelhas e Semente de Papoula',
     category: 'Sobremesas',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80',
+    image: '/assets/ambiente-1.jpg',
     highlight: true
   },
   {
     id: 8,
-    name: 'Crème Brûlée',
-    description: 'Creme de baunilha com caramelização na hora',
+    name: 'Primavera',
+    description: 'Creme de Maracujá, frutas vermelhas e sorbet de manga',
     category: 'Sobremesas',
-    image: 'https://images.unsplash.com/photo-1470324161839-ce2bb6fa6bc3?w=600&q=80',
+    image: '/assets/ambiente-2.jpg',
     highlight: false
   },
   {
@@ -74,7 +74,7 @@ const dishes = [
     name: 'Drink de Assinatura',
     description: 'Criação exclusiva da casa com destilados selecionados',
     category: 'Bebidas',
-    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80',
+    image: '/assets/ambiente-3.jpg',
     highlight: false
   }
 ]
@@ -106,7 +106,7 @@ export default function Cardapio() {
       <section className="cardapio-hero">
         <div className="cardapio-hero-bg">
           <img 
-            src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1920&q=80" 
+            src="/assets/hero-2.jpg" 
             alt="Cardápio" 
           />
           <div className="cardapio-hero-overlay"></div>
