@@ -1,0 +1,14 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Garantir que a navbar não sobreponha o conteúdo */
+.page-with-padding {
+  padding-top: 80px;
+}
