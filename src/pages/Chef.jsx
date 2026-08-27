@@ -49,7 +49,7 @@ export default function Chef() {
             >
               <div className="chef-main-image">
                 <img 
-                  src="https://images.unsplash.com/photo-1583394293214-28ez4536e7c?w=600&q=80" 
+                  src="/Chef Henrique.png" 
                   alt="Chef Henrique Fogaça" 
                 />
               </div>
