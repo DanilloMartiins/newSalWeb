@@ -70,8 +70,19 @@
   color: var(--color-gold);
 }
 
+@media (max-width: 768px) {
+  .mapa-location-card {
+    padding: 24px;
+  }
+}
+
 @media (max-width: 576px) {
   .mapa-sal-locations {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .mapa-location-card {
+    padding: 20px;
   }
 }

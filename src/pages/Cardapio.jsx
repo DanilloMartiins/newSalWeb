@@ -1,84 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
 import './Cardapio.css'
-
-const categories = ['Todos', 'Entradas', 'Pratos Principais', 'Sobremesas', 'Bebidas']
-
-const dishes = [
-  {
-    id: 1,
-    name: 'Aligot',
-    description: 'Lombo de Cordeiro com purê de dois queijos, cogumelos e molho de jabuticaba',
-    category: 'Pratos Principais',
-    image: '/assets/aligot.jpg',
-    highlight: true
-  },
-  {
-    id: 2,
-    name: 'Steak Tartare',
-    description: 'Mignon com ovo de codorna frito e batata chips',
-    category: 'Entradas',
-    image: '/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.jpg',
-    highlight: true
-  },
-  {
-    id: 3,
-    name: 'Polenta Cremosa',
-    description: 'Com linguiça, requeijão e molho de tomate artesanal',
-    category: 'Entradas',
-    image: '/assets/polenta-cremosa-com-linguica-300x300.jpg',
-    highlight: true
-  },
-  {
-    id: 4,
-    name: 'Burrata Sal Gastronomia',
-    description: 'Burrata fresca com componentes da estação',
-    category: 'Entradas',
-    image: '/assets/burrata_sal_gastronomia-300x300.jpg',
-    highlight: false
-  },
-  {
-    id: 5,
-    name: 'Prato da Casa',
-    description: 'Criação exclusiva da casa com ingredientes da estação',
-    category: 'Pratos Principais',
-    image: '/assets/imagem-home-destaque-2-c-cav_.jpg',
-    highlight: false
-  },
-  {
-    id: 6,
-    name: 'Cupim do SAL',
-    description: 'Preparado na manteiga de garrafa, servido com mandioca cozida e farofa de banana',
-    category: 'Pratos Principais',
-    image: '/assets/imagem-home-destaque-5-reservas-c-cav.jpg',
-    highlight: false
-  },
-  {
-    id: 7,
-    name: 'Pudim de Cumaru',
-    description: 'Com Calda de Frutas Vermelhas e Semente de Papoula',
-    category: 'Sobremesas',
-    image: '/assets/ambiente-1.jpg',
-    highlight: true
-  },
-  {
-    id: 8,
-    name: 'Primavera',
-    description: 'Creme de Maracujá, frutas vermelhas e sorbet de manga',
-    category: 'Sobremesas',
-    image: '/assets/ambiente-2.jpg',
-    highlight: false
-  },
-  {
-    id: 9,
-    name: 'Drink de Assinatura',
-    description: 'Criação exclusiva da casa com destilados selecionados',
-    category: 'Bebidas',
-    image: '/assets/ambiente-3.jpg',
-    highlight: false
-  }
-]
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -86,6 +10,91 @@ const fadeUp = {
 }
 
 export default function Cardapio() {
+  const { t } = useTranslation()
+
+  const categories = [
+    { key: 'Todos', label: t('cardapio.todos') },
+    { key: 'Entradas', label: t('cardapio.entradas') },
+    { key: 'Pratos Principais', label: t('cardapio.pratos') },
+    { key: 'Sobremesas', label: t('cardapio.sobremesas') },
+    { key: 'Bebidas', label: t('cardapio.bebidas') }
+  ]
+
+  const dishes = [
+    {
+      id: 1,
+      name: t('cardapio.pratos.aligot.nome'),
+      description: t('cardapio.pratos.aligot.desc'),
+      category: 'Pratos Principais',
+      image: '/assets/aligot.webp',
+      highlight: true
+    },
+    {
+      id: 2,
+      name: t('cardapio.pratos.tagliatelle.nome'),
+      description: t('cardapio.pratos.tagliatelle.desc'),
+      category: 'Entradas',
+      image: '/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.webp',
+      highlight: true
+    },
+    {
+      id: 3,
+      name: t('cardapio.pratos.polenta.nome'),
+      description: t('cardapio.pratos.polenta.desc'),
+      category: 'Entradas',
+      image: '/assets/polenta-cremosa-com-linguica-300x300.webp',
+      highlight: true
+    },
+    {
+      id: 4,
+      name: t('cardapio.pratos.burrata.nome'),
+      description: t('cardapio.pratos.burrata.desc'),
+      category: 'Entradas',
+      image: '/assets/burrata_sal_gastronomia-300x300.webp',
+      highlight: false
+    },
+    {
+      id: 5,
+      name: t('cardapio.pratos.casa.nome'),
+      description: t('cardapio.pratos.casa.desc'),
+      category: 'Pratos Principais',
+      image: '/assets/imagem-home-destaque-2-c-cav_.webp',
+      highlight: false
+    },
+    {
+      id: 6,
+      name: t('cardapio.pratos.cupim.nome'),
+      description: t('cardapio.pratos.cupim.desc'),
+      category: 'Pratos Principais',
+      image: '/assets/imagem-home-destaque-5-reservas-c-cav.webp',
+      highlight: false
+    },
+    {
+      id: 7,
+      name: t('cardapio.pratos.pudim.nome'),
+      description: t('cardapio.pratos.pudim.desc'),
+      category: 'Sobremesas',
+      image: '/assets/ambiente-1.webp',
+      highlight: true
+    },
+    {
+      id: 8,
+      name: t('cardapio.pratos.primavera.nome'),
+      description: t('cardapio.pratos.primavera.desc'),
+      category: 'Sobremesas',
+      image: '/assets/ambiente-2.webp',
+      highlight: false
+    },
+    {
+      id: 9,
+      name: t('cardapio.pratos.drink.nome'),
+      description: t('cardapio.pratos.drink.desc'),
+      category: 'Bebidas',
+      image: '/assets/ambiente-3.webp',
+      highlight: false
+    }
+  ]
+
   const [activeCategory, setActiveCategory] = useState('Todos')
   const [filteredDishes, setFilteredDishes] = useState(dishes)
 
@@ -104,10 +113,10 @@ export default function Cardapio() {
   return (
     <div className="cardapio-page page-with-padding">
       <PageHero 
-        image="/assets/hero-2.jpg"
-        label="Cardápio"
-        title="Nossos Pratos"
-        subtitle="Criações exclusivas da cozinha brasileira contemporânea"
+        image="/assets/hero-2.webp"
+        label={t('cardapio.heroLabel')}
+        title={t('cardapio.heroTitle')}
+        subtitle={t('cardapio.heroSub')}
       />
 
       {/* Categories Filter */}
@@ -116,11 +125,11 @@ export default function Cardapio() {
           <div className="filter-tabs">
             {categories.map(category => (
               <button
-                key={category}
-                className={`filter-tab ${activeCategory === category ? 'active' : ''}`}
-                onClick={() => setActiveCategory(category)}
+                key={category.key}
+                className={`filter-tab ${activeCategory === category.key ? 'active' : ''}`}
+                onClick={() => setActiveCategory(category.key)}
               >
-                {category}
+                {category.label}
               </button>
             ))}
           </div>
@@ -147,11 +156,11 @@ export default function Cardapio() {
                 <div className="dish-image">
                   <img src={dish.image} alt={dish.name} />
                   {dish.highlight && (
-                    <span className="dish-badge">Destaque</span>
+                    <span className="dish-badge">{t('cardapio.destaque')}</span>
                   )}
                 </div>
                 <div className="dish-content">
-                  <span className="dish-category">{dish.category}</span>
+                  <span className="dish-category">{categories.find(c => c.key === dish.category)?.label}</span>
                   <h3>{dish.name}</h3>
                   <p>{dish.description}</p>
                 </div>
@@ -160,10 +169,7 @@ export default function Cardapio() {
           </motion.div>
 
           <div className="cardapio-note">
-            <p>
-              * Valores e disponibilidade sujeitos a alteração. 
-              Consulte nossos garçom para mais informações.
-            </p>
+            <p>{t('cardapio.note')}</p>
           </div>
         </div>
       </section>
@@ -172,7 +178,7 @@ export default function Cardapio() {
       <section className="cardapio-cta">
         <div className="cardapio-cta-bg">
           <img 
-            src="/assets/parallax.jpg" 
+            src="/assets/parallax.webp" 
             alt="Reservas" 
           />
           <div className="cardapio-cta-overlay"></div>
@@ -185,15 +191,15 @@ export default function Cardapio() {
           variants={fadeUp}
           transition={{ duration: 0.6 }}
         >
-          <h2>Pronto para Experimentar?</h2>
-          <p>Reserve sua mesa e descubra sabores únicos</p>
+          <h2>{t('cardapio.ctaTitulo')}</h2>
+          <p>{t('cardapio.ctaSub')}</p>
           <a 
             href="https://reservation.getin.app/VknaxK6O" 
             target="_blank" 
             rel="noopener noreferrer"
             className="btn btn-outline"
           >
-            Reservar Mesa
+            {t('home.reservarMesa')}
           </a>
         </motion.div>
       </section>

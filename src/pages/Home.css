@@ -198,7 +198,55 @@
     order: -1;
   }
 
+  .about-image img {
+    height: 350px;
+  }
+
   .featured-grid {
     grid-template-columns: 1fr;
+  }
+
+  .reservation-cta {
+    padding: 120px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .about-image img {
+    height: 280px;
+  }
+
+  .featured-image {
+    height: 240px;
+  }
+
+  .featured-info {
+    padding: 20px;
+  }
+
+  .reservation-cta {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 450px;
+  }
+
+  .about-image img {
+    height: 220px;
+  }
+
+  .featured-image {
+    height: 200px;
+  }
+
+  .reservation-cta {
+    padding: 80px 0;
   }
 }

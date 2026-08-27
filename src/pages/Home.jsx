@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import './Home.css'
 
 const heroImages = [
-  '/assets/hero-1.jpg',
-  '/assets/hero-2.jpg',
-  '/assets/hero-3.jpg',
+  '/assets/hero-1.webp',
+  '/assets/hero-2.webp',
+  '/assets/hero-3.webp',
 ]
 
 const fadeUp = {
@@ -15,6 +16,7 @@ const fadeUp = {
 }
 
 export default function Home() {
+  const { t } = useTranslation()
   const [currentSlide, setCurrentSlide] = useState(0)
 
   useEffect(() => {
@@ -58,7 +60,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <img 
-                src="/assets/ambiente-1.jpg" 
+                src="/assets/ambiente-1.webp" 
                 alt="Ambiente Sal Gastronomia" 
               />
             </motion.div>
@@ -71,19 +73,16 @@ export default function Home() {
               variants={fadeUp}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <p className="section-label">O Sal Gastronomia</p>
-              <h2 className="section-title">Uma experiência gastronômica completa</h2>
+              <p className="section-label">{t('home.sobreLabel')}</p>
+              <h2 className="section-title">{t('home.sobreTitulo')}</h2>
               <p className="about-text">
-                Desde 2005, o Sal Gastronomia conquista paladares em São Paulo. 
-                A cozinha é marcada pelo tempero acentuado e qualidade dos ingredientes, 
-                uma característica do Chef Henrique Fogaça.
+                {t('home.sobreTexto1')}
               </p>
               <p className="about-text">
-                Mais do que comida boa, aqui você viverá uma experiência gastronômica, 
-                em um ambiente aconchegante, com uma equipe pronta para lhe atender.
+                {t('home.sobreTexto2')}
               </p>
               <Link to="/sobre" className="btn btn-outline-dark">
-                Conheça Nossa História
+                {t('home.sobreCta')}
               </Link>
             </motion.div>
           </div>
@@ -101,8 +100,8 @@ export default function Home() {
             variants={fadeUp}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Cardápio</p>
-            <h2 className="section-title">Criações Exclusivas</h2>
+            <p className="section-label">{t('home.cardapioLabel')}</p>
+            <h2 className="section-title">{t('home.cardapioTitulo')}</h2>
           </motion.div>
 
           <div className="featured-grid">
@@ -115,11 +114,11 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <div className="featured-image">
-                <img src="/assets/aligot.jpg" alt="Aligot" />
+                <img src="/assets/aligot.webp" alt="Aligot" />
               </div>
               <div className="featured-info">
                 <h3>Aligot</h3>
-                <p>Lombo de Cordeiro com purê de dois queijos, cogumelos e molho de jabuticaba</p>
+                <p>{t('home.aligotDesc')}</p>
               </div>
             </motion.div>
 
@@ -132,11 +131,11 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="featured-image">
-                <img src="/assets/tagliatelli-300x300.jpg" alt="Tagliatelle" />
+                <img src="/assets/tagliatelli-300x300.webp" alt="Tagliatelle" />
               </div>
               <div className="featured-info">
                 <h3>Tagliatelle</h3>
-                <p>Com Pesto de Espinafre e Muzzarela de Búfala</p>
+                <p>{t('home.tagliatelleDesc')}</p>
               </div>
             </motion.div>
 
@@ -149,11 +148,11 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="featured-image">
-                <img src="/assets/polenta-cremosa-com-linguica-300x300.jpg" alt="Polenta Cremosa" />
+                <img src="/assets/polenta-cremosa-com-linguica-300x300.webp" alt="Polenta Cremosa" />
               </div>
               <div className="featured-info">
                 <h3>Polenta Cremosa</h3>
-                <p>Com linguiça, requeijão e molho de tomate artesanal</p>
+                <p>{t('home.polentaDesc')}</p>
               </div>
             </motion.div>
           </div>
@@ -167,7 +166,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Link to="/cardapio" className="btn btn-outline-dark">
-              Ver Cardápio Completo
+              {t('home.verCardapio')}
             </Link>
           </motion.div>
         </div>
@@ -177,7 +176,7 @@ export default function Home() {
       <section className="reservation-cta">
         <div className="reservation-cta-bg">
           <img 
-            src="/assets/parallax.jpg" 
+            src="/assets/parallax.webp" 
             alt="Sal Gastronomia" 
           />
           <div className="reservation-cta-overlay"></div>
@@ -190,16 +189,16 @@ export default function Home() {
           variants={fadeUp}
           transition={{ duration: 0.6 }}
         >
-          <p className="section-label" style={{color: 'rgba(255,255,255,0.6)'}}>Reservas</p>
-          <h2>Reserve Sua Experiência</h2>
-          <p>Garanta seu lugar e descubra sabores únicos</p>
+          <p className="section-label" style={{color: 'rgba(255,255,255,0.6)'}}>{t('home.reservasLabel')}</p>
+          <h2>{t('home.reservasTitulo')}</h2>
+          <p>{t('home.reservasSub')}</p>
           <a 
             href="https://reservation.getin.app/VknaxK6O" 
             target="_blank" 
             rel="noopener noreferrer"
             className="btn btn-outline"
           >
-            Reservar Mesa
+            {t('home.reservarMesa')}
           </a>
         </motion.div>
       </section>

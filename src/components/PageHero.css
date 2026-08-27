@@ -70,9 +70,26 @@
   margin: 0 auto;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .page-hero {
     height: 50vh;
-    min-height: 400px;
+    min-height: 350px;
+  }
+
+  .page-hero-label {
+    font-size: 0.625rem;
+    letter-spacing: 2px;
+  }
+
+  .page-hero-subtitle {
+    font-size: 0.9375rem;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    height: 45vh;
+    min-height: 300px;
   }
 }

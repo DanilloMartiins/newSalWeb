@@ -161,6 +161,24 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .reservas-info h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reservas-form-container {
+    padding: 32px 24px;
+  }
+
+  .info-card {
+    padding: 24px;
+  }
+
+  .reservas-real-cta {
+    padding: 20px 16px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -169,6 +187,14 @@
   }
 
   .reservas-form-container {
-    padding: 24px;
+    padding: 24px 16px;
+  }
+
+  .reservas-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-card {
+    padding: 20px;
   }
 }

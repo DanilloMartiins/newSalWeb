@@ -166,6 +166,17 @@
     order: -1;
   }
 
+  .story-img-main {
+    height: 400px;
+  }
+
+  .story-img-accent {
+    width: 150px;
+    height: 150px;
+    bottom: -20px;
+    left: -10px;
+  }
+
   .timeline::before {
     left: 20px;
   }
@@ -184,7 +195,42 @@
 }
 
 @media (max-width: 768px) {
+  .story-img-main {
+    height: 300px;
+  }
+
+  .story-img-accent {
+    width: 120px;
+    height: 120px;
+    bottom: -15px;
+    left: -5px;
+  }
+
   .values-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .value-card {
+    padding: 32px 24px;
+  }
+
+  .timeline-item {
+    margin-bottom: 32px;
+  }
+
+  .timeline-content {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-img-main {
+    height: 240px;
+  }
+
+  .story-img-accent {
+    width: 100px;
+    height: 100px;
   }
 }

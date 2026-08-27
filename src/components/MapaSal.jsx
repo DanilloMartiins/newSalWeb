@@ -21,7 +21,7 @@ export default function MapaSal() {
   return (
     <div className="mapa-sal">
       <div className="mapa-sal-box">
-        <img src="/assets/img-maps-sal-gastronomia-2024fev1.jpg" alt="Sal Gastronomia - Mapa das unidades" />
+        <img src="/assets/img-maps-sal-gastronomia-2024fev1.webp" alt="Sal Gastronomia - Mapa das unidades" />
       </div>
       <div className="mapa-sal-locations">
         {locations.map((loc, i) => (

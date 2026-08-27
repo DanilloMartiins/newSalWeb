@@ -53,3 +53,19 @@
 .footer-developer a:hover {
   color: var(--color-gold-light);
 }
+
+@media (max-width: 576px) {
+  .footer-container {
+    padding: 0 20px;
+  }
+
+  .footer-social {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .footer-social a {
+    font-size: 0.625rem;
+  }
+}

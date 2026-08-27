@@ -1,20 +1,30 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import './Navbar.css'
 
-const navLinks = [
-  { path: '/', label: 'Início' },
-  { path: '/sobre', label: 'O Sal' },
-  { path: '/os-chefs', label: 'Os Chefs' },
-  { path: '/cardapio', label: 'Cardápio' },
-  { path: '/contato', label: 'Contato' },
+const languages = [
+  { code: 'pt', label: 'PT' },
+  { code: 'en', label: 'EN' },
+  { code: 'es', label: 'ES' },
+  { code: 'ja', label: 'JA' },
 ]
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
   const location = useLocation()
+  const { t, i18n } = useTranslation()
+
+  const navLinks = [
+    { path: '/', label: t('nav.inicio') },
+    { path: '/sobre', label: t('nav.sobre') },
+    { path: '/os-chefs', label: t('nav.chefs') },
+    { path: '/cardapio', label: t('nav.cardapio') },
+    { path: '/contato', label: t('nav.contato') },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +36,15 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
+    setLangOpen(false)
   }, [location])
+
+  const changeLang = (code) => {
+    i18n.changeLanguage(code)
+    setLangOpen(false)
+  }
+
+  const currentLang = languages.find(l => l.code === i18n.language) || languages[0]
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -44,7 +62,7 @@ export default function Navbar() {
         </div>
 
         <Link to="/" className="navbar-logo">
-          <img src="/assets/favicon.png" alt="Sal Gastronomia" className="logo-image" />
+          <img src="/assets/favicon.webp" alt="Sal Gastronomia" className="logo-image" />
         </Link>
 
         <div className="navbar-links-right">
@@ -57,13 +75,33 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          <div className="lang-selector">
+            <button className="lang-btn" onClick={() => setLangOpen(!langOpen)}>
+              {currentLang.label}
+            </button>
+            {langOpen && (
+              <div className="lang-dropdown">
+                {languages.map(lang => (
+                  <button
+                    key={lang.code}
+                    className={`lang-option ${i18n.language === lang.code ? 'active' : ''}`}
+                    onClick={() => changeLang(lang.code)}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
           <a 
             href="https://reservation.getin.app/VknaxK6O" 
             target="_blank" 
             rel="noopener noreferrer"
             className="navbar-cta btn btn-primary"
           >
-            Reservas
+            {t('nav.reservas')}
           </a>
         </div>
 
@@ -96,13 +134,24 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="mobile-lang">
+                {languages.map(lang => (
+                  <button
+                    key={lang.code}
+                    className={`mobile-lang-btn ${i18n.language === lang.code ? 'active' : ''}`}
+                    onClick={() => changeLang(lang.code)}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
               <a 
                 href="https://reservation.getin.app/VknaxK6O" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-primary mobile-cta"
               >
-                Reservas
+                {t('nav.reservas')}
               </a>
             </div>
           </motion.div>

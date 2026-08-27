@@ -92,7 +92,7 @@
     "ctaBtn": "Reservar Mesa",
     "pratos": {
       "aligot": { "nome": "Aligot", "desc": "Lomo de Cordeiro con puré de dos quesos, champiñones y salsa de jabuticaba" },
-      "tartare": { "nome": "Steak Tartare", "desc": "Mignon con huevo de codorniz frito y papas chips" },
+      "tagliatelle": { "nome": "Steak Tartare", "desc": "Mignon con huevo de codorniz frito y papas chips" },
       "polenta": { "nome": "Polenta Cremosa", "desc": "Con salchicha, requesón y salsa de tomate artesanal" },
       "burrata": { "nome": "Burrata Sal Gastronomia", "desc": "Burrata fresca con componentes de temporada" },
       "casa": { "nome": "Plato de la Casa", "desc": "Creación exclusiva de la casa con ingredientes de temporada" },
@@ -151,7 +151,8 @@
     "assuntoOutro": "Otro Asunto",
     "mensagem": "Mensaje",
     "mensagemPlaceholder": "Escribe tu mensaje aquí...",
-    "enviarBtn": "Enviar Mensaje"
+    "enviarBtn": "Enviar Mensaje",
+    "alerta": "¡Mensaje enviado con éxito! Responderemos pronto."
   },
   "footer": {
     "direitos": "Todos los derechos reservados.",

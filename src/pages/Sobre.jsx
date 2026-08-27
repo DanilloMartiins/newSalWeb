@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
 import './Sobre.css'
 
@@ -9,6 +10,8 @@ const fadeUp = {
 }
 
 export default function Sobre() {
+  const { t } = useTranslation()
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -16,10 +19,10 @@ export default function Sobre() {
   return (
     <div className="sobre-page page-with-padding">
       <PageHero 
-        image="/assets/ambiente-2.jpg"
-        label="Nossa História"
-        title="O Sal Gastronomia"
-        subtitle="Desde 2005 conquistando paladares em São Paulo"
+        image="/assets/ambiente-2.webp"
+        label={t('sobre.heroLabel')}
+        title={t('sobre.heroTitle')}
+        subtitle={t('sobre.heroSub')}
       />
 
       {/* Story Section */}
@@ -34,20 +37,16 @@ export default function Sobre() {
               variants={fadeUp}
               transition={{ duration: 0.6 }}
             >
-              <p className="section-label">Quem Somos</p>
-              <h2 className="section-title">Mais do que comida boa</h2>
+              <p className="section-label">{t('sobre.quemSomos')}</p>
+              <h2 className="section-title">{t('sobre.quemSomosTitulo')}</h2>
               <p className="story-text">
-                Aqui no SAL você viverá uma experiência gastronômica completa, 
-                em um ambiente aconchegante, com uma equipe pronta para lhe atender.
+                {t('sobre.quemSomosTexto1')}
               </p>
               <p className="story-text">
-                A cozinha do SAL é marcada pelo tempero acentuado e qualidade 
-                dos ingredientes, uma forte característica do Chef Henrique Fogaça, 
-                que é não ter medo de errar e ousar em suas criações.
+                {t('sobre.quemSomosTexto2')}
               </p>
               <p className="story-text">
-                O cardápio segue a linha brasileira contemporânea, com criações 
-                exclusivas que surpreendem a cada mordida.
+                {t('sobre.quemSomosTexto3')}
               </p>
             </motion.div>
             
@@ -61,13 +60,13 @@ export default function Sobre() {
             >
               <div className="story-img-main">
                 <img 
-                  src="/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.jpg" 
+                  src="/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.webp" 
                   alt="Prato do Sal" 
                 />
               </div>
               <div className="story-img-accent">
                 <img 
-                  src="/assets/ambiente-3.jpg" 
+                  src="/assets/ambiente-3.webp" 
                   alt="Ambiente" 
                 />
               </div>
@@ -87,8 +86,8 @@ export default function Sobre() {
             variants={fadeUp}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Trajetória</p>
-            <h2 className="section-title">Nossa História</h2>
+            <p className="section-label">{t('sobre.trajetoriaLabel')}</p>
+            <h2 className="section-title">{t('sobre.trajetoriaTitulo')}</h2>
           </motion.div>
 
           <div className="timeline">
@@ -102,11 +101,8 @@ export default function Sobre() {
             >
               <div className="timeline-year">2005</div>
               <div className="timeline-content">
-                <h3>Inauguração</h3>
-                <p>
-                  O Sal Gastronomia é fundado no bairro de Higienópolis, 
-                  São Paulo, trazendo uma nova proposta de cozinha brasileira contemporânea.
-                </p>
+                <h3>{t('sobre.inauguracao')}</h3>
+                <p>{t('sobre.inauguracaoDesc')}</p>
               </div>
             </motion.div>
 
@@ -120,11 +116,8 @@ export default function Sobre() {
             >
               <div className="timeline-year">2017</div>
               <div className="timeline-content">
-                <h3>Segunda Unidade</h3>
-                <p>
-                  Inauguração da segunda casa no Shopping Cidade Jardim, 
-                  no bairro do Morumbi, com um ambiente privilegiado e vista para a cidade.
-                </p>
+                <h3>{t('sobre.segundaUnidade')}</h3>
+                <p>{t('sobre.segundaUnidadeDesc')}</p>
               </div>
             </motion.div>
 
@@ -138,12 +131,8 @@ export default function Sobre() {
             >
               <div className="timeline-year">2024</div>
               <div className="timeline-content">
-                <h3>Renovação</h3>
-                <p>
-                  A unidade de Higienópolis encerra suas atividades em dezembro, 
-                  enquanto a unidade do Shopping Cidade Jardim continua forte, 
-                  agora complementada pela nova unidade Bela Cintra nos Jardins.
-                </p>
+                <h3>{t('sobre.renovacao')}</h3>
+                <p>{t('sobre.renovacaoDesc')}</p>
               </div>
             </motion.div>
 
@@ -157,11 +146,8 @@ export default function Sobre() {
             >
               <div className="timeline-year">Hoje</div>
               <div className="timeline-content">
-                <h3>Presente</h3>
-                <p>
-                  Duas unidades funcionando em São Paulo, continuando a tradição 
-                  de oferecer experiências gastronômicas únicas e inesquecíveis.
-                </p>
+                <h3>{t('sobre.presente')}</h3>
+                <p>{t('sobre.presenteDesc')}</p>
               </div>
             </motion.div>
           </div>
@@ -179,8 +165,8 @@ export default function Sobre() {
             variants={fadeUp}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-label">Valores</p>
-            <h2 className="section-title">O Que Nos Move</h2>
+            <p className="section-label">{t('sobre.valoresLabel')}</p>
+            <h2 className="section-title">{t('sobre.valoresTitulo')}</h2>
           </motion.div>
 
           <div className="values-grid">
@@ -193,11 +179,8 @@ export default function Sobre() {
               transition={{ duration: 0.5 }}
             >
               <div className="value-icon">✦</div>
-              <h3>Qualidade</h3>
-              <p>
-                Ingredientes selecionados e tempero preciso em cada prato 
-                que sai da nossa cozinha.
-              </p>
+              <h3>{t('sobre.qualidade')}</h3>
+              <p>{t('sobre.qualidadeDesc')}</p>
             </motion.div>
 
             <motion.div 
@@ -209,11 +192,8 @@ export default function Sobre() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="value-icon">✦</div>
-              <h3>Ousadia</h3>
-              <p>
-                Não temos medo de errar e ousar em nossas criações, 
-                sempre buscando surpreender.
-              </p>
+              <h3>{t('sobre.ousadia')}</h3>
+              <p>{t('sobre.ousadiaDesc')}</p>
             </motion.div>
 
             <motion.div 
@@ -225,11 +205,8 @@ export default function Sobre() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="value-icon">✦</div>
-              <h3>Acolhimento</h3>
-              <p>
-                Um ambiente aconchegante e equipe pronta para proporcionar 
-                a melhor experiência.
-              </p>
+              <h3>{t('sobre.acolhimento')}</h3>
+              <p>{t('sobre.acolhimentoDesc')}</p>
             </motion.div>
           </div>
         </div>

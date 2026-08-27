@@ -92,7 +92,7 @@
     "ctaBtn": "テーブルを予約する",
     "pratos": {
       "aligot": { "nome": "Aligot", "desc": "ラムロインのチーズ風味ピュレ、きのこ、ジャブチカバソース" },
-      "tartare": { "nome": "Steak Tartare", "desc": "牛ヒレ肉の生ハム、鶏卵の目玉焼き添え、ポテトチップス" },
+      "tagliatelle": { "nome": "Steak Tartare", "desc": "牛ヒレ肉の生ハム、鶏卵の目玉焼き添え、ポテトチップス" },
       "polenta": { "nome": "Polenta Cremosa", "desc": "ソーセージ、クリームチーズ、手作りトマトソース添え" },
       "burrata": { "nome": "Burrata Sal Gastronomia", "desc": "季節の素材を使ったフレッシュ・ブラッタ" },
       "casa": { "nome": "Prato da Casa", "desc": "季節の素材を使った当店自慢の創作料理" },
@@ -151,7 +151,8 @@
     "assuntoOutro": "その他",
     "mensagem": "メッセージ",
     "mensagemPlaceholder": "メッセージをここに記入してください...",
-    "enviarBtn": "メッセージを送信する"
+    "enviarBtn": "メッセージを送信する",
+    "alerta": "メッセージが送信されました。近日中にご返信いたします。"
   },
   "footer": {
     "direitos": "全著作権所有。",

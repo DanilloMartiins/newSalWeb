@@ -186,9 +186,39 @@
   }
 }
 
+@media (max-width: 768px) {
+  .chef-tab {
+    padding: 20px 16px;
+  }
+
+  .chef-tab-name {
+    font-size: 1.125rem;
+  }
+
+  .chef-detail-bio p {
+    font-size: 0.9375rem;
+  }
+
+  .team-text {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 576px) {
   .chefs-hero {
     height: 50vh;
     min-height: 400px;
+  }
+
+  .chef-tab {
+    padding: 16px;
+  }
+
+  .chef-tab-name {
+    font-size: 1rem;
+  }
+
+  .chef-tab-role {
+    font-size: 0.6875rem;
   }
 }

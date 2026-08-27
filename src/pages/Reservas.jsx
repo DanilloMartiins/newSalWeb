@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
 import './Reservas.css'
 
 export default function Reservas() {
+  const { t } = useTranslation()
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,10 +42,10 @@ export default function Reservas() {
   return (
     <div className="reservas-page page-with-padding">
       <PageHero 
-        image="/assets/hero-3.jpg"
-        label="Reservas"
-        title="Reserve Sua Mesa"
-        subtitle="Garanta seu lugar e viva uma experiência gastronômica inesquecível"
+        image="/assets/hero-3.webp"
+        label={t('reservas.heroLabel')}
+        title={t('reservas.heroTitle')}
+        subtitle={t('reservas.heroSub')}
       />
 
       {/* Reservation Form */}
@@ -55,35 +58,32 @@ export default function Reservas() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2>Informações</h2>
+              <h2>{t('reservas.infoTitulo')}</h2>
               
               <div className="info-card">
-                <h3>Shopping Cidade Jardim</h3>
+                <h3>{t('reservas.cidadeJardim')}</h3>
                 <p>Av. Magalhães de Castro, 12.000</p>
                 <p>Morumbi, São Paulo - SP</p>
                 <p className="info-phone">(11) 3198-9505</p>
                 <p className="info-hours">
-                  Seg - Dom: 12h às 23h
+                  {t('reservas.segDom')}
                 </p>
               </div>
 
               <div className="info-card">
-                <h3>Bela Cintra - Jardins</h3>
+                <h3>{t('reservas.belaCintra')}</h3>
                 <p>R. Bela Cintra, 1958</p>
                 <p>Jardins, São Paulo - SP</p>
                 <p className="info-phone">(11) 3554-4460</p>
                 <p className="info-hours">
-                  Seg - Qui: 12h às 23h<br />
-                  Sex - Sáb: 12h às 23h<br />
-                  Dom: 12h às 22h
+                  {t('reservas.segQui')}<br />
+                  {t('reservas.sexSab')}<br />
+                  {t('reservas.dom')}
                 </p>
               </div>
 
               <div className="info-note">
-                <p>
-                  * Para grupos acima de 8 pessoas, entre em contato 
-                  diretamente por telefone.
-                </p>
+                <p>{t('reservas.grupoNota')}</p>
               </div>
             </motion.div>
 
@@ -94,24 +94,24 @@ export default function Reservas() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <div className="reservas-real-cta">
-                <p>Reserve diretamente pelo nosso sistema oficial:</p>
+                <p>{t('reservas.reservaOficial')}</p>
                 <a 
                   href="https://reservation.getin.app/VknaxK6O" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-full"
                 >
-                  Reservar pelo Sistema Oficial
+                  {t('reservas.reservaOficialBtn')}
                 </a>
               </div>
 
               <div className="reservas-divider">
-                <span>ou preencha o formulário abaixo</span>
+                <span>{t('reservas.ouForm')}</span>
               </div>
               <form onSubmit={handleSubmit} className="reservas-form">
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="name">Nome Completo</label>
+                    <label htmlFor="name">{t('reservas.nome')}</label>
                     <input
                       type="text"
                       id="name"
@@ -123,7 +123,7 @@ export default function Reservas() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="email">E-mail</label>
+                    <label htmlFor="email">{t('reservas.email')}</label>
                     <input
                       type="email"
                       id="email"
@@ -138,7 +138,7 @@ export default function Reservas() {
 
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="phone">Telefone</label>
+                    <label htmlFor="phone">{t('reservas.telefone')}</label>
                     <input
                       type="tel"
                       id="phone"
@@ -150,7 +150,7 @@ export default function Reservas() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="guests">Número de Pessoas</label>
+                    <label htmlFor="guests">{t('reservas.pessoas')}</label>
                     <select
                       id="guests"
                       name="guests"
@@ -160,7 +160,7 @@ export default function Reservas() {
                     >
                       {[1,2,3,4,5,6,7,8].map(num => (
                         <option key={num} value={num}>
-                          {num} {num === 1 ? 'pessoa' : 'pessoas'}
+                          {num} {num === 1 ? t('reservas.pessoa') : t('reservas.pessoasPlural')}
                         </option>
                       ))}
                     </select>
@@ -169,7 +169,7 @@ export default function Reservas() {
 
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="date">Data</label>
+                    <label htmlFor="date">{t('reservas.data')}</label>
                     <input
                       type="date"
                       id="date"
@@ -180,7 +180,7 @@ export default function Reservas() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="time">Horário</label>
+                    <label htmlFor="time">{t('reservas.horario')}</label>
                     <select
                       id="time"
                       name="time"
@@ -188,7 +188,7 @@ export default function Reservas() {
                       onChange={handleChange}
                       required
                     >
-                      <option value="">Selecione</option>
+                      <option value="">{t('reservas.selecione')}</option>
                       {timeSlots.map(time => (
                         <option key={time} value={time}>{time}</option>
                       ))}
@@ -197,7 +197,7 @@ export default function Reservas() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="location">Unidade</label>
+                  <label htmlFor="location">{t('reservas.unidade')}</label>
                   <select
                     id="location"
                     name="location"
@@ -205,25 +205,25 @@ export default function Reservas() {
                     onChange={handleChange}
                     required
                   >
-                    <option value="cidade-jardim">Shopping Cidade Jardim</option>
-                    <option value="bela-cintra">Bela Cintra - Jardins</option>
+                    <option value="cidade-jardim">{t('reservas.cidadeJardim')}</option>
+                    <option value="bela-cintra">{t('reservas.belaCintra')}</option>
                   </select>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Observações (opcional)</label>
+                  <label htmlFor="message">{t('reservas.obs')}</label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows="4"
-                    placeholder="Alguma restrição alimentar, ocasião especial..."
+                    placeholder={t('reservas.obsPlaceholder')}
                   ></textarea>
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-full">
-                  Confirmar Reserva
+                  {t('reservas.confirmar')}
                 </button>
               </form>
             </motion.div>

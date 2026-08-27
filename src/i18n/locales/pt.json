@@ -92,7 +92,7 @@
     "ctaBtn": "Reservar Mesa",
     "pratos": {
       "aligot": { "nome": "Aligot", "desc": "Lombo de Cordeiro com purê de dois queijos, cogumelos e molho de jabuticaba" },
-      "tartare": { "nome": "Steak Tartare", "desc": "Mignon com ovo de codorna frito e batata chips" },
+      "tagliatelle": { "nome": "Steak Tartare", "desc": "Mignon com ovo de codorna frito e batata chips" },
       "polenta": { "nome": "Polenta Cremosa", "desc": "Com linguiça, requeijão e molho de tomate artesanal" },
       "burrata": { "nome": "Burrata Sal Gastronomia", "desc": "Burrata fresca com componentes da estação" },
       "casa": { "nome": "Prato da Casa", "desc": "Criação exclusiva da casa com ingredientes da estação" },
@@ -151,7 +151,8 @@
     "assuntoOutro": "Outro Assunto",
     "mensagem": "Mensagem",
     "mensagemPlaceholder": "Escreva sua mensagem aqui...",
-    "enviarBtn": "Enviar Mensagem"
+    "enviarBtn": "Enviar Mensagem",
+    "alerta": "Mensagem enviada com sucesso! Responderemos em breve."
   },
   "footer": {
     "direitos": "Todos os direitos reservados.",

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
 import MapaSal from '../components/MapaSal'
 import './Contato.css'
 
 export default function Contato() {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,16 +27,16 @@ export default function Contato() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Mensagem enviada com sucesso! Responderemos em breve.')
+    alert(t('contato.alerta'))
   }
 
   return (
     <div className="contato-page page-with-padding">
       <PageHero 
-        image="/assets/imagem-home-destaque-2-c-cav_.jpg"
-        label="Contato"
-        title="Fale Conosco"
-        subtitle="Estamos aqui para atender você"
+        image="/assets/imagem-home-destaque-2-c-cav_.webp"
+        label={t('contato.heroLabel')}
+        title={t('contato.heroTitle')}
+        subtitle={t('contato.heroSub')}
       />
 
       {/* Contact Section */}
@@ -48,7 +50,7 @@ export default function Contato() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2>Informações de Contato</h2>
+              <h2>{t('contato.infoTitulo')}</h2>
               
               <div className="info-block">
                 <h3>Shopping Cidade Jardim</h3>
@@ -65,7 +67,7 @@ export default function Contato() {
               </div>
 
               <div className="info-block">
-                <h3>Horários</h3>
+                <h3>{t('contato.horarios')}</h3>
                 <p><strong>Cidade Jardim:</strong></p>
                 <p>Seg - Dom: 12h às 23h</p>
                 <br />
@@ -76,7 +78,7 @@ export default function Contato() {
               </div>
 
               <div className="social-links">
-                <h3>Redes Sociais</h3>
+                <h3>{t('contato.redes')}</h3>
                 <div className="social-icons">
                   <a href="https://www.instagram.com/salgastronomia/" target="_blank" rel="noopener noreferrer">
                     Instagram
@@ -95,11 +97,11 @@ export default function Contato() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h2>Envie uma Mensagem</h2>
+              <h2>{t('contato.enviarTitulo')}</h2>
               
               <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-group">
-                  <label htmlFor="name">Nome</label>
+                  <label htmlFor="name">{t('contato.nome')}</label>
                   <input
                     type="text"
                     id="name"
@@ -107,12 +109,12 @@ export default function Contato() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Seu nome completo"
+                    placeholder={t('contato.nomePlaceholder')}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">E-mail</label>
+                  <label htmlFor="email">{t('contato.email')}</label>
                   <input
                     type="email"
                     id="email"
@@ -125,7 +127,7 @@ export default function Contato() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Assunto</label>
+                  <label htmlFor="subject">{t('contato.assunto')}</label>
                   <select
                     id="subject"
                     name="subject"
@@ -133,16 +135,16 @@ export default function Contato() {
                     onChange={handleChange}
                     required
                   >
-                    <option value="">Selecione</option>
-                    <option value="reserva">Dúvida sobre Reserva</option>
-                    <option value="evento">Eventos</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="outro">Outro Assunto</option>
+                    <option value="">{t('contato.selecione')}</option>
+                    <option value="reserva">{t('contato.assuntoReserva')}</option>
+                    <option value="evento">{t('contato.assuntoEvento')}</option>
+                    <option value="feedback">{t('contato.assuntoFeedback')}</option>
+                    <option value="outro">{t('contato.assuntoOutro')}</option>
                   </select>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Mensagem</label>
+                  <label htmlFor="message">{t('contato.mensagem')}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -150,12 +152,12 @@ export default function Contato() {
                     onChange={handleChange}
                     required
                     rows="5"
-                    placeholder="Escreva sua mensagem aqui..."
+                    placeholder={t('contato.mensagemPlaceholder')}
                   ></textarea>
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-full">
-                  Enviar Mensagem
+                  {t('contato.enviarBtn')}
                 </button>
               </form>
             </motion.div>

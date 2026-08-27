@@ -92,7 +92,7 @@
     "ctaBtn": "Reserve a Table",
     "pratos": {
       "aligot": { "nome": "Aligot", "desc": "Lamb Loin with two-cheese purée, mushrooms, and jabuticaba sauce" },
-      "tartare": { "nome": "Steak Tartare", "desc": "Mignon with fried quail egg and potato chips" },
+      "tagliatelle": { "nome": "Steak Tartare", "desc": "Mignon with fried quail egg and potato chips" },
       "polenta": { "nome": "Creamy Polenta", "desc": "With sausage, cream cheese, and artisanal tomato sauce" },
       "burrata": { "nome": "Burrata Sal Gastronomia", "desc": "Fresh burrata with seasonal components" },
       "casa": { "nome": "House Special", "desc": "Exclusive house creation with seasonal ingredients" },
@@ -151,7 +151,8 @@
     "assuntoOutro": "Other Subject",
     "mensagem": "Message",
     "mensagemPlaceholder": "Write your message here...",
-    "enviarBtn": "Send Message"
+    "enviarBtn": "Send Message",
+    "alerta": "Message sent successfully! We will respond soon."
   },
   "footer": {
     "direitos": "All rights reserved.",
