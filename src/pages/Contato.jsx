@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import PageHero from '../components/PageHero'
+import MapaSal from '../components/MapaSal'
 import './Contato.css'
 
 export default function Contato() {
@@ -28,26 +30,12 @@ export default function Contato() {
 
   return (
     <div className="contato-page page-with-padding">
-      {/* Hero */}
-      <section className="contato-hero">
-        <div className="contato-hero-bg">
-          <img 
-            src="/assets/img-maps-sal-gastronomia-2024fev.jpg" 
-            alt="Contato" 
-          />
-          <div className="contato-hero-overlay"></div>
-        </div>
-        <motion.div 
-          className="contato-hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="section-label">Contato</p>
-          <h1>Fale Conosco</h1>
-          <p>Estamos aqui para atender você</p>
-        </motion.div>
-      </section>
+      <PageHero 
+        image="/assets/imagem-home-destaque-2-c-cav_.jpg"
+        label="Contato"
+        title="Fale Conosco"
+        subtitle="Estamos aqui para atender você"
+      />
 
       {/* Contact Section */}
       <section className="contact-section section">
@@ -176,12 +164,10 @@ export default function Contato() {
       </section>
 
       {/* Map Section */}
-      <section className="map-section">
-        <img 
-          src="/assets/img-maps-sal-gastronomia-2024fev.jpg" 
-          alt="Mapa Sal Gastronomia" 
-          className="map-image"
-        />
+      <section className="map-section section">
+        <div className="container">
+          <MapaSal />
+        </div>
       </section>
     </div>
   )

@@ -132,11 +132,11 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="featured-image">
-                <img src="/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.jpg" alt="Steak Tartare" />
+                <img src="/assets/tagliatelli-300x300.jpg" alt="Tagliatelle" />
               </div>
               <div className="featured-info">
-                <h3>Steak Tartare</h3>
-                <p>Mignon com ovo de codorna frito e batata chips</p>
+                <h3>Tagliatelle</h3>
+                <p>Com Pesto de Espinafre e Muzzarela de Búfala</p>
               </div>
             </motion.div>
 

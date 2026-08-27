@@ -6,7 +6,7 @@ import './Navbar.css'
 const navLinks = [
   { path: '/', label: 'Início' },
   { path: '/sobre', label: 'O Sal' },
-  { path: '/chef', label: 'Chef' },
+  { path: '/os-chefs', label: 'Os Chefs' },
   { path: '/cardapio', label: 'Cardápio' },
   { path: '/contato', label: 'Contato' },
 ]
@@ -44,7 +44,7 @@ export default function Navbar() {
         </div>
 
         <Link to="/" className="navbar-logo">
-          <img src="/assets/logo-sticky.png" alt="Sal Gastronomia" className="logo-image" />
+          <img src="/assets/favicon.png" alt="Sal Gastronomia" className="logo-image" />
         </Link>
 
         <div className="navbar-links-right">

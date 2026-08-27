@@ -6,7 +6,7 @@ import Cardapio from './pages/Cardapio'
 import Reservas from './pages/Reservas'
 import Sobre from './pages/Sobre'
 import Contato from './pages/Contato'
-import Chef from './pages/Chef'
+import OsChefs from './pages/OsChefs'
 import './App.css'
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
             <Route path="/reservas" element={<Reservas />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />
-            <Route path="/chef" element={<Chef />} />
+            <Route path="/os-chefs" element={<OsChefs />} />
           </Routes>
         </main>
         <Footer />

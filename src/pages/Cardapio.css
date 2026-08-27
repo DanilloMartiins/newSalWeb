@@ -1,50 +1,3 @@
-.cardapio-hero {
-  position: relative;
-  height: 50vh;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cardapio-hero-bg {
-  position: absolute;
-  inset: 0;
-}
-
-.cardapio-hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.cardapio-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.5) 0%,
-    rgba(0,0,0,0.7) 100%
-  );
-}
-
-.cardapio-hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: var(--color-white);
-}
-
-.cardapio-hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 16px;
-}
-
-.cardapio-hero-content p {
-  font-size: 1.125rem;
-  color: rgba(255,255,255,0.8);
-}
-
 /* Filter */
 .cardapio-filter {
   background-color: var(--color-white);
@@ -185,21 +138,58 @@
   background-color: var(--color-white);
 }
 
-.cta-box {
-  background-color: var(--color-dark);
-  padding: 64px;
+/* CTA with image */
+.cardapio-cta {
+  position: relative;
+  padding: 180px 0;
   text-align: center;
+  overflow: hidden;
+}
+
+.cardapio-cta-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.cardapio-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardapio-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.cardapio-cta-content {
+  position: relative;
+  z-index: 1;
   color: var(--color-white);
 }
 
-.cta-box h2 {
-  font-size: 2rem;
+.cardapio-cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
   margin-bottom: 12px;
+  color: var(--color-white);
 }
 
-.cta-box p {
+.cardapio-cta-content p {
+  font-size: 1rem;
   color: rgba(255,255,255,0.7);
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.cardapio-cta-content .btn-outline {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.cardapio-cta-content .btn-outline:hover {
+  background-color: var(--color-gold);
+  color: var(--color-white);
 }
 
 /* Responsive */

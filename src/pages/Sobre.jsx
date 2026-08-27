@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import PageHero from '../components/PageHero'
 import './Sobre.css'
 
 const fadeUp = {
@@ -14,26 +15,12 @@ export default function Sobre() {
 
   return (
     <div className="sobre-page page-with-padding">
-      {/* Hero */}
-      <section className="sobre-hero">
-        <div className="sobre-hero-bg">
-          <img 
-            src="/assets/ambiente-2.jpg" 
-            alt="Sobre o Sal" 
-          />
-          <div className="sobre-hero-overlay"></div>
-        </div>
-        <motion.div 
-          className="sobre-hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="section-label">Nossa História</p>
-          <h1>O Sal Gastronomia</h1>
-          <p>Desde 2005 conquistando paladares em São Paulo</p>
-        </motion.div>
-      </section>
+      <PageHero 
+        image="/assets/ambiente-2.jpg"
+        label="Nossa História"
+        title="O Sal Gastronomia"
+        subtitle="Desde 2005 conquistando paladares em São Paulo"
+      />
 
       {/* Story Section */}
       <section className="story-section section">

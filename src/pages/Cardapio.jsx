@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import PageHero from '../components/PageHero'
 import './Cardapio.css'
 
 const categories = ['Todos', 'Entradas', 'Pratos Principais', 'Sobremesas', 'Bebidas']
@@ -102,26 +103,12 @@ export default function Cardapio() {
 
   return (
     <div className="cardapio-page page-with-padding">
-      {/* Hero */}
-      <section className="cardapio-hero">
-        <div className="cardapio-hero-bg">
-          <img 
-            src="/assets/hero-2.jpg" 
-            alt="Cardápio" 
-          />
-          <div className="cardapio-hero-overlay"></div>
-        </div>
-        <motion.div 
-          className="cardapio-hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="section-label">Cardápio</p>
-          <h1>Nossos Pratos</h1>
-          <p>Criações exclusivas da cozinha brasileira contemporânea</p>
-        </motion.div>
-      </section>
+      <PageHero 
+        image="/assets/hero-2.jpg"
+        label="Cardápio"
+        title="Nossos Pratos"
+        subtitle="Criações exclusivas da cozinha brasileira contemporânea"
+      />
 
       {/* Categories Filter */}
       <section className="cardapio-filter">
@@ -182,16 +169,33 @@ export default function Cardapio() {
       </section>
 
       {/* CTA */}
-      <section className="cardapio-cta section">
-        <div className="container">
-          <div className="cta-box">
-            <h2>Pronto para Experimentar?</h2>
-            <p>Reserve sua mesa e descubra sabores únicos</p>
-            <a href="/reservas" className="btn btn-primary">
-              Reservar Mesa
-            </a>
-          </div>
+      <section className="cardapio-cta">
+        <div className="cardapio-cta-bg">
+          <img 
+            src="/assets/parallax.jpg" 
+            alt="Reservas" 
+          />
+          <div className="cardapio-cta-overlay"></div>
         </div>
+        <motion.div 
+          className="cardapio-cta-content"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+        >
+          <h2>Pronto para Experimentar?</h2>
+          <p>Reserve sua mesa e descubra sabores únicos</p>
+          <a 
+            href="https://reservation.getin.app/VknaxK6O" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+          >
+            Reservar Mesa
+          </a>
+        </motion.div>
       </section>
     </div>
   )

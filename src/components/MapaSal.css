@@ -1,0 +1,77 @@
+.mapa-sal {
+  width: 100%;
+}
+
+.mapa-sal-box {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mapa-sal-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mapa-sal-locations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.mapa-location-card {
+  display: block;
+  padding: 32px;
+  background-color: var(--color-off-white);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.mapa-location-card:hover {
+  background-color: var(--color-dark);
+}
+
+.mapa-location-card:hover h3,
+.mapa-location-card:hover p,
+.mapa-location-card:hover .mapa-location-link {
+  color: var(--color-white);
+}
+
+.mapa-location-card h3 {
+  font-size: 1.125rem;
+  color: var(--color-dark);
+  margin-bottom: 8px;
+}
+
+.mapa-location-card p {
+  color: var(--color-text-light);
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+}
+
+.mapa-location-phone {
+  font-weight: 500;
+  margin-top: 8px !important;
+}
+
+.mapa-location-hours {
+  font-size: 0.8125rem !important;
+}
+
+.mapa-location-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+@media (max-width: 576px) {
+  .mapa-sal-locations {
+    grid-template-columns: 1fr;
+  }
+}

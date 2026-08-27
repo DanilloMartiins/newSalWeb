@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import PageHero from '../components/PageHero'
 import './Reservas.css'
 
 export default function Reservas() {
@@ -37,26 +38,12 @@ export default function Reservas() {
 
   return (
     <div className="reservas-page page-with-padding">
-      {/* Hero */}
-      <section className="reservas-hero">
-        <div className="reservas-hero-bg">
-          <img 
-            src="/assets/hero-3.jpg" 
-            alt="Reservas" 
-          />
-          <div className="reservas-hero-overlay"></div>
-        </div>
-        <motion.div 
-          className="reservas-hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="section-label">Reservas</p>
-          <h1>Reserve Sua Mesa</h1>
-          <p>Garanta seu lugar e viva uma experiência gastronômica inesquecível</p>
-        </motion.div>
-      </section>
+      <PageHero 
+        image="/assets/hero-3.jpg"
+        label="Reservas"
+        title="Reserve Sua Mesa"
+        subtitle="Garanta seu lugar e viva uma experiência gastronômica inesquecível"
+      />
 
       {/* Reservation Form */}
       <section className="reservas-form-section section">

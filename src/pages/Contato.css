@@ -1,50 +1,3 @@
-.contato-hero {
-  position: relative;
-  height: 50vh;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contato-hero-bg {
-  position: absolute;
-  inset: 0;
-}
-
-.contato-hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.contato-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.5) 0%,
-    rgba(0,0,0,0.7) 100%
-  );
-}
-
-.contato-hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: var(--color-white);
-}
-
-.contato-hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 16px;
-}
-
-.contato-hero-content p {
-  font-size: 1.125rem;
-  color: rgba(255,255,255,0.8);
-}
-
 /* Contact Section */
 .contact-section {
   background-color: var(--color-off-white);
@@ -187,13 +140,6 @@
 /* Map */
 .map-section {
   background-color: var(--color-white);
-}
-
-.map-image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  display: block;
 }
 
 /* Responsive */
