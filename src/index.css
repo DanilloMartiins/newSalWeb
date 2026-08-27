@@ -10,17 +10,12 @@
   --color-dark: #1A1A1A;
   --color-darker: #0D0D0D;
   --color-text: #333333;
-  --color-text-light: #666666;
+  --color-text-light: #777777;
   --color-white: #FFFFFF;
-  --color-off-white: #F8F6F3;
-  --color-border: #E8E4DF;
+  --color-off-white: #F7F6F3;
+  --color-border: #E5E3DF;
   
-  --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
-  --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
   
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -39,9 +34,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-weight: 400;
   line-height: 1.2;
+  color: var(--color-dark);
 }
 
 a {
@@ -57,23 +53,35 @@ img {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 .section {
-  padding: 100px 0;
+  padding: 120px 0;
+}
+
+.section-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 300;
   color: var(--color-dark);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  line-height: 1.3;
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--color-text-light);
-  max-width: 600px;
+  max-width: 500px;
+  line-height: 1.8;
 }
 
 .btn {
@@ -82,9 +90,9 @@ img {
   gap: 8px;
   padding: 14px 32px;
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
@@ -92,51 +100,49 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--color-gold);
+  background-color: var(--color-dark);
   color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-gold-light);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  background-color: #333;
 }
 
 .btn-outline {
   background-color: transparent;
   color: var(--color-white);
-  border: 1px solid var(--color-white);
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .btn-outline:hover {
-  background-color: var(--color-white);
-  color: var(--color-dark);
+  border-color: var(--color-white);
+  background-color: rgba(255,255,255,0.1);
 }
 
-.btn-dark {
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background-color: transparent;
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-outline-dark:hover {
   background-color: var(--color-dark);
   color: var(--color-white);
 }
 
-.btn-dark:hover {
-  background-color: var(--color-darker);
-}
-
-/* Animações de entrada */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Scrollbar personalizada */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -144,10 +150,12 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gold);
-  border-radius: 4px;
+  background: var(--color-text-light);
+  border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold-light);
+/* Selection */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-white);
 }

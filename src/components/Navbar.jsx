@@ -8,7 +8,6 @@ const navLinks = [
   { path: '/sobre', label: 'O Sal' },
   { path: '/chef', label: 'Chef' },
   { path: '/cardapio', label: 'Cardápio' },
-  { path: '/reservas', label: 'Reservas' },
   { path: '/contato', label: 'Contato' },
 ]
 
@@ -32,13 +31,8 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <span className="logo-text">SAL</span>
-          <span className="logo-subtitle">Gastronomia</span>
-        </Link>
-
-        <div className="navbar-links">
-          {navLinks.map(link => (
+        <div className="navbar-links-left">
+          {navLinks.slice(0, 3).map(link => (
             <Link
               key={link.path}
               to={link.path}
@@ -49,21 +43,35 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a 
-          href="https://reservation.getin.app/VknaxK6O" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="navbar-cta btn btn-primary"
-        >
-          Reservar Mesa
-        </a>
+        <Link to="/" className="navbar-logo">
+          <img src="/logo.png" alt="Sal Gastronomia" className="logo-image" />
+        </Link>
+
+        <div className="navbar-links-right">
+          {navLinks.slice(3).map(link => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a 
+            href="https://reservation.getin.app/VknaxK6O" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="navbar-cta btn btn-primary"
+          >
+            Reservas
+          </a>
+        </div>
 
         <button
           className={`mobile-menu-btn ${isMobileMenuOpen ? 'open' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Menu"
         >
-          <span></span>
           <span></span>
           <span></span>
         </button>
@@ -73,28 +81,30 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <motion.div
             className="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {navLinks.map(link => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`mobile-link ${location.pathname === link.path ? 'active' : ''}`}
+            <div className="mobile-menu-inner">
+              {navLinks.map(link => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`mobile-link ${location.pathname === link.path ? 'active' : ''}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a 
+                href="https://reservation.getin.app/VknaxK6O" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn btn-primary mobile-cta"
               >
-                {link.label}
-              </Link>
-            ))}
-            <a 
-              href="https://reservation.getin.app/VknaxK6O" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn btn-primary mobile-cta"
-            >
-              Reservar Mesa
-            </a>
+                Reservas
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
