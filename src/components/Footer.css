@@ -94,6 +94,20 @@
   font-size: 0.8125rem;
 }
 
+.footer-developer {
+  margin-top: 8px;
+}
+
+.footer-developer a {
+  color: var(--color-gold);
+  transition: var(--transition);
+}
+
+.footer-developer a:hover {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .footer-top {
     grid-template-columns: 1fr;
