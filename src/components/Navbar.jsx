@@ -19,11 +19,11 @@ export default function Navbar() {
   const { t, i18n } = useTranslation()
 
   const navLinks = [
-    { path: '/', label: t('nav.inicio') },
-    { path: '/sobre', label: t('nav.sobre') },
-    { path: '/os-chefs', label: t('nav.chefs') },
-    { path: '/cardapio', label: t('nav.cardapio') },
-    { path: '/contato', label: t('nav.contato') },
+    { path: '/', label: t('nav.inicio'), icon: 'home' },
+    { path: '/sobre', label: t('nav.sobre'), icon: 'info' },
+    { path: '/os-chefs', label: t('nav.chefs'), icon: 'chef' },
+    { path: '/cardapio', label: t('nav.cardapio'), icon: 'menu' },
+    { path: '/contato', label: t('nav.contato'), icon: 'contact' },
   ]
 
   useEffect(() => {
@@ -48,7 +48,8 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container">
+      {/* Desktop */}
+      <div className="navbar-container desktop-nav">
         <div className="navbar-links-left">
           {navLinks.slice(0, 3).map(link => (
             <Link
@@ -95,26 +96,69 @@ export default function Navbar() {
             )}
           </div>
 
-          <a 
-            href="https://reservation.getin.app/VknaxK6O" 
-            target="_blank" 
+          <a
+            href="https://reservation.getin.app/VknaxK6O"
+            target="_blank"
             rel="noopener noreferrer"
             className="navbar-cta btn btn-primary"
           >
             {t('nav.reservas')}
           </a>
         </div>
-
-        <button
-          className={`mobile-menu-btn ${isMobileMenuOpen ? 'open' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Menu"
-        >
-          <span></span>
-          <span></span>
-        </button>
       </div>
 
+      {/* Mobile - Top Bar */}
+      <div className="mobile-topbar">
+        <Link to="/" className="navbar-logo">
+          <img src="/assets/favicon.webp" alt="Sal Gastronomia" className="logo-image" />
+        </Link>
+
+        <div className="mobile-topbar-actions">
+          <div className="lang-selector">
+            <button className="lang-btn" onClick={() => setLangOpen(!langOpen)}>
+              {currentLang.label}
+            </button>
+            {langOpen && (
+              <div className="lang-dropdown">
+                {languages.map(lang => (
+                  <button
+                    key={lang.code}
+                    className={`lang-option ${i18n.language === lang.code ? 'active' : ''}`}
+                    onClick={() => changeLang(lang.code)}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <a
+            href="https://reservation.getin.app/VknaxK6O"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mobile-topbar-cta"
+          >
+            {t('nav.reservas')}
+          </a>
+        </div>
+      </div>
+
+      {/* Mobile - Bottom Tab Bar */}
+      <div className="mobile-bottombar">
+        {navLinks.map(link => (
+          <Link
+            key={link.path}
+            to={link.path}
+            className={`mobile-tab ${location.pathname === link.path ? 'active' : ''}`}
+          >
+            <span className="mobile-tab-icon">{link.icon === 'home' ? '⌂' : link.icon === 'info' ? '◉' : link.icon === 'chef' ? '♦' : link.icon === 'menu' ? '≡' : '✉'}</span>
+            <span className="mobile-tab-label">{link.label}</span>
+          </Link>
+        ))}
+      </div>
+
+      {/* Mobile - Full Screen Menu (hamburger) */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -145,9 +189,9 @@ export default function Navbar() {
                   </button>
                 ))}
               </div>
-              <a 
-                href="https://reservation.getin.app/VknaxK6O" 
-                target="_blank" 
+              <a
+                href="https://reservation.getin.app/VknaxK6O"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary mobile-cta"
               >

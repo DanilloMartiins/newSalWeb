@@ -90,7 +90,7 @@
     "ctaTitulo": "¿Listo para Probar?",
     "ctaSub": "Reserva tu mesa y descubre sabores únicos",
     "ctaBtn": "Reservar Mesa",
-    "pratos": {
+    "itens": {
       "aligot": { "nome": "Aligot", "desc": "Lomo de Cordeiro con puré de dos quesos, champiñones y salsa de jabuticaba" },
       "tagliatelle": { "nome": "Steak Tartare", "desc": "Mignon con huevo de codorniz frito y papas chips" },
       "polenta": { "nome": "Polenta Cremosa", "desc": "Con salchicha, requesón y salsa de tomate artesanal" },

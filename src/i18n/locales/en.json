@@ -90,7 +90,7 @@
     "ctaTitulo": "Ready to Experience It?",
     "ctaSub": "Reserve your table and discover unique flavors",
     "ctaBtn": "Reserve a Table",
-    "pratos": {
+    "itens": {
       "aligot": { "nome": "Aligot", "desc": "Lamb Loin with two-cheese purée, mushrooms, and jabuticaba sauce" },
       "tagliatelle": { "nome": "Steak Tartare", "desc": "Mignon with fried quail egg and potato chips" },
       "polenta": { "nome": "Creamy Polenta", "desc": "With sausage, cream cheese, and artisanal tomato sauce" },

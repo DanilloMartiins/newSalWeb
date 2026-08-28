@@ -69,3 +69,9 @@
     font-size: 0.625rem;
   }
 }
+
+@media (max-width: 900px) {
+  .footer {
+    padding-bottom: calc(48px + env(safe-area-inset-bottom));
+  }
+}

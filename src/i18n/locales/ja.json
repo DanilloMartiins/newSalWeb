@@ -90,7 +90,7 @@
     "ctaTitulo": "試してみませんか？",
     "ctaSub": "テーブルを予約して、唯一無二の味を発見しましょう",
     "ctaBtn": "テーブルを予約する",
-    "pratos": {
+    "itens": {
       "aligot": { "nome": "Aligot", "desc": "ラムロインのチーズ風味ピュレ、きのこ、ジャブチカバソース" },
       "tagliatelle": { "nome": "Steak Tartare", "desc": "牛ヒレ肉の生ハム、鶏卵の目玉焼き添え、ポテトチップス" },
       "polenta": { "nome": "Polenta Cremosa", "desc": "ソーセージ、クリームチーズ、手作りトマトソース添え" },

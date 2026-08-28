@@ -23,72 +23,72 @@ export default function Cardapio() {
   const dishes = [
     {
       id: 1,
-      name: t('cardapio.pratos.aligot.nome'),
-      description: t('cardapio.pratos.aligot.desc'),
+      name: t('cardapio.itens.aligot.nome'),
+      description: t('cardapio.itens.aligot.desc'),
       category: 'Pratos Principais',
       image: '/assets/aligot.webp',
       highlight: true
     },
     {
       id: 2,
-      name: t('cardapio.pratos.tagliatelle.nome'),
-      description: t('cardapio.pratos.tagliatelle.desc'),
+      name: t('cardapio.itens.tagliatelle.nome'),
+      description: t('cardapio.itens.tagliatelle.desc'),
       category: 'Entradas',
       image: '/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.webp',
       highlight: true
     },
     {
       id: 3,
-      name: t('cardapio.pratos.polenta.nome'),
-      description: t('cardapio.pratos.polenta.desc'),
+      name: t('cardapio.itens.polenta.nome'),
+      description: t('cardapio.itens.polenta.desc'),
       category: 'Entradas',
       image: '/assets/polenta-cremosa-com-linguica-300x300.webp',
       highlight: true
     },
     {
       id: 4,
-      name: t('cardapio.pratos.burrata.nome'),
-      description: t('cardapio.pratos.burrata.desc'),
+      name: t('cardapio.itens.burrata.nome'),
+      description: t('cardapio.itens.burrata.desc'),
       category: 'Entradas',
       image: '/assets/burrata_sal_gastronomia-300x300.webp',
       highlight: false
     },
     {
       id: 5,
-      name: t('cardapio.pratos.casa.nome'),
-      description: t('cardapio.pratos.casa.desc'),
+      name: t('cardapio.itens.casa.nome'),
+      description: t('cardapio.itens.casa.desc'),
       category: 'Pratos Principais',
       image: '/assets/imagem-home-destaque-2-c-cav_.webp',
       highlight: false
     },
     {
       id: 6,
-      name: t('cardapio.pratos.cupim.nome'),
-      description: t('cardapio.pratos.cupim.desc'),
+      name: t('cardapio.itens.cupim.nome'),
+      description: t('cardapio.itens.cupim.desc'),
       category: 'Pratos Principais',
       image: '/assets/imagem-home-destaque-5-reservas-c-cav.webp',
       highlight: false
     },
     {
       id: 7,
-      name: t('cardapio.pratos.pudim.nome'),
-      description: t('cardapio.pratos.pudim.desc'),
+      name: t('cardapio.itens.pudim.nome'),
+      description: t('cardapio.itens.pudim.desc'),
       category: 'Sobremesas',
       image: '/assets/ambiente-1.webp',
       highlight: true
     },
     {
       id: 8,
-      name: t('cardapio.pratos.primavera.nome'),
-      description: t('cardapio.pratos.primavera.desc'),
+      name: t('cardapio.itens.primavera.nome'),
+      description: t('cardapio.itens.primavera.desc'),
       category: 'Sobremesas',
       image: '/assets/ambiente-2.webp',
       highlight: false
     },
     {
       id: 9,
-      name: t('cardapio.pratos.drink.nome'),
-      description: t('cardapio.pratos.drink.desc'),
+      name: t('cardapio.itens.drink.nome'),
+      description: t('cardapio.itens.drink.desc'),
       category: 'Bebidas',
       image: '/assets/ambiente-3.webp',
       highlight: false
