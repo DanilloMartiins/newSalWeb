@@ -26,6 +26,14 @@ export default function Navbar() {
     { path: '/contato', label: t('nav.contato'), icon: 'contact' },
   ]
 
+  const mobileTabLinks = [
+    { path: '/os-chefs', label: t('nav.chefs'), icon: 'fork-knife' },
+    { path: '/sobre', label: t('nav.sobre'), icon: 'house' },
+    { path: '/', label: t('nav.inicio'), icon: 'skull' },
+    { path: '/cardapio', label: t('nav.cardapio'), icon: 'menu' },
+    { path: '/contato', label: t('nav.contato'), icon: 'contact' },
+  ]
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
@@ -146,13 +154,25 @@ export default function Navbar() {
 
       {/* Mobile - Bottom Tab Bar */}
       <div className="mobile-bottombar">
-        {navLinks.map(link => (
+        {mobileTabLinks.map(link => (
           <Link
             key={link.path}
             to={link.path}
             className={`mobile-tab ${location.pathname === link.path ? 'active' : ''}`}
           >
-            <span className="mobile-tab-icon">{link.icon === 'home' ? '⌂' : link.icon === 'info' ? '◉' : link.icon === 'chef' ? '♦' : link.icon === 'menu' ? '≡' : '✉'}</span>
+            <span className="mobile-tab-icon">
+              {link.icon === 'skull' ? (
+                <img src="/assets/favicon.webp" alt="" className="mobile-tab-logo" />
+              ) : link.icon === 'house' ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              ) : link.icon === 'fork-knife' ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2c-2 0-5 2-5 7 0 3 1 5 3 6v7"/></svg>
+              ) : link.icon === 'menu' ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              )}
+            </span>
             <span className="mobile-tab-label">{link.label}</span>
           </Link>
         ))}

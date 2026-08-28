@@ -161,10 +161,25 @@
 .mobile-tab-icon {
   font-size: 1.125rem;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-tab-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .mobile-tab.active {
   color: var(--color-gold);
+}
+
+.mobile-tab.active .mobile-tab-logo {
+  filter: drop-shadow(0 0 4px rgba(201, 169, 110, 0.6));
 }
 
 .mobile-tab-label {
