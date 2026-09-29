@@ -21,7 +21,7 @@ export default function OsChefs() {
       image: '/assets/os-chefs/imagem-os-chefs-fogaca-1024x683.webp',
       bio: t('chefs.fogacaBio', { returnObjects: true }),
       social: {
-        instagram: 'https://www.instagram.com/chefhenriquefogaca/'
+        instagram: 'https://www.instagram.com/henrique_fogaca74/'
       }
     },
     {
@@ -31,7 +31,7 @@ export default function OsChefs() {
       image: '/assets/os-chefs/imagem-os-chefs-douglas-1024x683.webp',
       bio: t('chefs.douglasBio', { returnObjects: true }),
       social: {
-        instagram: 'https://www.instagram.com/chefdouglaschavez/'
+        instagram: 'https://www.instagram.com/douglas.chavez.1293/'
       }
     }
   ]
