@@ -3,3 +3,7 @@ dist
 .env
 .env.local
 .DS_Store
+
+# Proposta comercial (editavel + PDF final).
+Proposta Comercial*.docx
+Proposta Comercial*.pdf

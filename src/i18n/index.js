@@ -5,7 +5,7 @@ import en from './locales/en.json'
 import es from './locales/es.json'
 import ja from './locales/ja.json'
 
-const savedLang = localStorage.getItem('sal-lang') || 'pt'
+const savedLang = typeof window !== 'undefined' ? localStorage.getItem('sal-lang') || 'pt' : 'pt'
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -22,7 +22,7 @@ i18n.use(initReactI18next).init({
 })
 
 i18n.on('languageChanged', (lng) => {
-  localStorage.setItem('sal-lang', lng)
+  if (typeof window !== 'undefined') localStorage.setItem('sal-lang', lng)
 })
 
 export default i18n

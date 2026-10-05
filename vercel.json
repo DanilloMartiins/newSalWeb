@@ -1,3 +1,14 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/sobre", "destination": "/sobre.html" },
+    { "source": "/os-chefs", "destination": "/os-chefs.html" },
+    { "source": "/cardapio", "destination": "/cardapio.html" },
+    { "source": "/reservas", "destination": "/reservas.html" },
+    { "source": "/contato", "destination": "/contato.html" },
+    { "source": "/sobre/", "destination": "/sobre.html" },
+    { "source": "/os-chefs/", "destination": "/os-chefs.html" },
+    { "source": "/cardapio/", "destination": "/cardapio.html" },
+    { "source": "/reservas/", "destination": "/reservas.html" },
+    { "source": "/contato/", "destination": "/contato.html" }
+  ]
 }

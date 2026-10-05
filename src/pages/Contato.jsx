@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
 import MapaSal from '../components/MapaSal'
+import SEOHead from '../components/SEOHead'
+import { SEO_PADRAO } from '../seo.js'
 import './Contato.css'
 
 export default function Contato() {
@@ -32,6 +34,7 @@ export default function Contato() {
 
   return (
     <div className="contato-page page-with-padding">
+      <SEOHead title={SEO_PADRAO.titulo} description={SEO_PADRAO.descricao} path="/contato" />
       <PageHero 
         image="/assets/imagem-home-destaque-2-c-cav_.webp"
         label={t('contato.heroLabel')}

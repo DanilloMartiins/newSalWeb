@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
+import SEOHead from '../components/SEOHead'
+import { SEO_PADRAO } from '../seo.js'
 import './Sobre.css'
 
 const fadeUp = {
@@ -18,6 +20,7 @@ export default function Sobre() {
 
   return (
     <div className="sobre-page page-with-padding">
+      <SEOHead title={SEO_PADRAO.titulo} description={SEO_PADRAO.descricao} path="/sobre" />
       <PageHero 
         image="/assets/ambiente-2.webp"
         label={t('sobre.heroLabel')}
@@ -61,13 +64,15 @@ export default function Sobre() {
               <div className="story-img-main">
                 <img 
                   src="/assets/lombo-de-cordeiro-pure-de-dois-queijos-funghi-e-molho-de-jabuticaba-1024x683.webp" 
-                  alt="Prato do Sal" 
+                  alt="Prato do Sal"
+                  loading="lazy" 
                 />
               </div>
               <div className="story-img-accent">
                 <img 
                   src="/assets/ambiente-3.webp" 
-                  alt="Ambiente" 
+                  alt="Ambiente"
+                  loading="lazy" 
                 />
               </div>
             </motion.div>

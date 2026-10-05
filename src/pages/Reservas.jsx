@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
+import SEOHead from '../components/SEOHead'
+import { SEO_PADRAO } from '../seo.js'
 import './Reservas.css'
 
 export default function Reservas() {
@@ -41,6 +43,7 @@ export default function Reservas() {
 
   return (
     <div className="reservas-page page-with-padding">
+      <SEOHead title={SEO_PADRAO.titulo} description={SEO_PADRAO.descricao} path="/reservas" />
       <PageHero 
         image="/assets/hero-3.webp"
         label={t('reservas.heroLabel')}

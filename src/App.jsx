@@ -1,33 +1,41 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React, { Suspense } from 'react'
+import { Outlet } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Home from './pages/Home'
-import Cardapio from './pages/Cardapio'
-import Reservas from './pages/Reservas'
-import Sobre from './pages/Sobre'
-import Contato from './pages/Contato'
-import OsChefs from './pages/OsChefs'
 import './App.css'
 
-function App() {
+const Home = React.lazy(() => import('./pages/Home'))
+const Sobre = React.lazy(() => import('./pages/Sobre'))
+const OsChefs = React.lazy(() => import('./pages/OsChefs'))
+const Cardapio = React.lazy(() => import('./pages/Cardapio'))
+const Reservas = React.lazy(() => import('./pages/Reservas'))
+const Contato = React.lazy(() => import('./pages/Contato'))
+
+function Layout() {
   return (
-    <Router>
-      <div className="app">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cardapio" element={<Cardapio />} />
-            <Route path="/reservas" element={<Reservas />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/os-chefs" element={<OsChefs />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className="app">
+      <Navbar />
+      <main className="main-content">
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <Footer />
+    </div>
   )
 }
 
-export default App
+export const routes = [
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, Component: Home },
+      { path: 'sobre', Component: Sobre },
+      { path: 'os-chefs', Component: OsChefs },
+      { path: 'cardapio', Component: Cardapio },
+      { path: 'reservas', Component: Reservas },
+      { path: 'contato', Component: Contato },
+    ],
+  },
+]

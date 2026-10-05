@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
+import SEOHead from '../components/SEOHead'
+import { SEO_PADRAO } from '../seo.js'
 import './Cardapio.css'
 
 const fadeUp = {
@@ -112,6 +114,7 @@ export default function Cardapio() {
 
   return (
     <div className="cardapio-page page-with-padding">
+      <SEOHead title={SEO_PADRAO.titulo} description={SEO_PADRAO.descricao} path="/cardapio" />
       <PageHero 
         image="/assets/hero-2.webp"
         label={t('cardapio.heroLabel')}
@@ -154,7 +157,7 @@ export default function Cardapio() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <div className="dish-image">
-                  <img src={dish.image} alt={dish.name} />
+                  <img src={dish.image} alt={dish.name} loading="lazy" />
                   {dish.highlight && (
                     <span className="dish-badge">{t('cardapio.destaque')}</span>
                   )}
@@ -179,7 +182,8 @@ export default function Cardapio() {
         <div className="cardapio-cta-bg">
           <img 
             src="/assets/parallax.webp" 
-            alt="Reservas" 
+            alt="Reservas"
+            loading="lazy" 
           />
           <div className="cardapio-cta-overlay"></div>
         </div>

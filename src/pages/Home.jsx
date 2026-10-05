@@ -1,3 +1,6 @@
+import { Head } from 'vite-react-ssg'
+import SEOHead from '../components/SEOHead'
+import { SITE_URL, SEO_PADRAO } from '../seo.js'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -30,10 +33,37 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
+  // dados pro Google (enderecos reais da pagina Contato)
+  const restaurante = {
+    '@context': 'https://schema.org',
+    '@type': 'Restaurant',
+    name: 'Sal Gastronomia',
+    servesCuisine: ['Brasileira', 'Contemporanea'],
+    telephone: '(11) 3198-9505',
+    url: SITE_URL,
+    image: SITE_URL + '/og.jpg',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Av. Magalhaes de Castro, 12000',
+      addressLocality: 'Sao Paulo',
+      addressRegion: 'SP',
+      addressCountry: 'BR',
+    },
+    sameAs: [
+      'https://www.instagram.com/salgastronomia/',
+      'https://www.facebook.com/salgastronomia',
+    ],
+  }
+
   return (
     <div className="home">
+      <SEOHead title={SEO_PADRAO.titulo} description={SEO_PADRAO.descricao} path="/" />
+      <Head>
+        <script type="application/ld+json">{JSON.stringify(restaurante)}</script>
+      </Head>
       {/* Hero Gallery */}
       <section className="hero">
+        <h1 className="sr-only">Sal Gastronomia</h1>
         <div className="hero-gallery">
           {heroImages.map((img, index) => (
             <div
@@ -61,7 +91,8 @@ export default function Home() {
             >
               <img 
                 src="/assets/ambiente-1.webp" 
-                alt="Ambiente Sal Gastronomia" 
+                alt="Ambiente Sal Gastronomia"
+                loading="lazy" 
               />
             </motion.div>
             
@@ -114,7 +145,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <div className="featured-image">
-                <img src="/assets/aligot.webp" alt="Aligot" />
+                <img src="/assets/aligot.webp" alt="Aligot" loading="lazy" />
               </div>
               <div className="featured-info">
                 <h3>Aligot</h3>
@@ -131,7 +162,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="featured-image">
-                <img src="/assets/tagliatelli-300x300.webp" alt="Tagliatelle" />
+                <img src="/assets/tagliatelli-300x300.webp" alt="Tagliatelle" loading="lazy" />
               </div>
               <div className="featured-info">
                 <h3>Tagliatelle</h3>
@@ -148,7 +179,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="featured-image">
-                <img src="/assets/polenta-cremosa-com-linguica-300x300.webp" alt="Polenta Cremosa" />
+                <img src="/assets/polenta-cremosa-com-linguica-300x300.webp" alt="Polenta Cremosa" loading="lazy" />
               </div>
               <div className="featured-info">
                 <h3>Polenta Cremosa</h3>
@@ -177,7 +208,8 @@ export default function Home() {
         <div className="reservation-cta-bg">
           <img 
             src="/assets/parallax.webp" 
-            alt="Sal Gastronomia" 
+            alt="Sal Gastronomia"
+            loading="lazy" 
           />
           <div className="reservation-cta-overlay"></div>
         </div>

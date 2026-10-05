@@ -50,6 +50,19 @@ img {
   height: auto;
 }
 
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

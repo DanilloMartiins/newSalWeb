@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import PageHero from '../components/PageHero'
+import SEOHead from '../components/SEOHead'
+import { SEO_PADRAO } from '../seo.js'
 import './OsChefs.css'
 
 const fadeUp = {
@@ -44,6 +46,7 @@ export default function OsChefs() {
 
   return (
     <div className="os-chefs-page page-with-padding">
+      <SEOHead title={SEO_PADRAO.titulo} description={SEO_PADRAO.descricao} path="/os-chefs" />
       <PageHero 
         image="/assets/os-chefs/banner-os-chefs-o-chef-master.webp"
         label={t('chefs.heroLabel')}
@@ -85,7 +88,8 @@ export default function OsChefs() {
                 <div className="chef-detail-image">
                   <img 
                     src={currentChef.image} 
-                    alt={currentChef.name} 
+                    alt={currentChef.name}
+                    loading="lazy" 
                   />
                 </div>
                 <div className="chef-detail-info">
@@ -140,7 +144,8 @@ export default function OsChefs() {
           >
             <img 
               src="/assets/os-chefs/equipe-sal-gastronomia-.webp" 
-              alt="Equipe Sal Gastronomia" 
+              alt="Equipe Sal Gastronomia"
+              loading="lazy" 
             />
           </motion.div>
         </div>
