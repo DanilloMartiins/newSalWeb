@@ -92,6 +92,14 @@
   box-shadow: 0 8px 40px rgba(201, 169, 110, 0.15);
 }
 
+.featured-clicavel {
+  cursor: pointer;
+}
+
+.featured-clicavel .featured-image {
+  cursor: zoom-in;
+}
+
 .featured-image {
   height: 320px;
   overflow: hidden;

@@ -1,8 +1,8 @@
 /* Filter */
 .cardapio-filter {
-  background-color: var(--color-white);
+  background-color: #F6F1E7;
   padding: 24px 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.25);
   position: sticky;
   top: 60px;
   z-index: 100;
@@ -18,7 +18,7 @@
 .filter-tab {
   padding: 10px 24px;
   background: none;
-  border: 1px solid var(--color-border);
+  border: 1px solid #D8CFB8;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 500;
@@ -30,7 +30,7 @@
 }
 
 .filter-tab:hover {
-  border-color: var(--color-dark);
+  border-color: var(--color-gold);
   color: var(--color-dark);
 }
 
@@ -40,9 +40,230 @@
   color: var(--color-white);
 }
 
+/* abas de unidade + titulo de categoria (dados do GetIn) */
+.unidade-tabs {
+  margin-bottom: 12px;
+}
+
+.categoria-bloco {
+  margin-bottom: 56px;
+}
+
+.categoria-titulo {
+  color: var(--color-dark);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.dish-preco {
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 12px;
+}
+
+.dish-clicavel {
+  cursor: pointer;
+}
+
+/* Modal do prato */
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.modal {
+  position: relative;
+  background-color: var(--color-white);
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--color-white);
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* lupa: hover vira zoom 2x seguindo o mouse */
+.modal-foto {
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.modal-foto.com-zoom {
+  cursor: zoom-out;
+}
+
+/* foto fixa (sem lupa, cursor normal) */
+.modal-foto-fixa {
+  cursor: default;
+}
+
+.modal-foto img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.modal-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.modal-info h2 {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+.modal-info p {
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.modal-incluso {
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.modal-info .btn {
+  margin-top: 8px;
+}
+
+/* Degustacao: pacotes + mesa rolavel com hover */
+.deg-pacotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.deg-pacote {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gold);
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.deg-pacote h2 {
+  color: var(--color-dark);
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.deg-pacote p {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.deg-preco {
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.mesa {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+}
+
+.mesa-prato {
+  position: relative;
+  flex: 0 0 280px;
+  height: 360px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.mesa-prato img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mesa-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 20px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.mesa-prato:hover .mesa-overlay,
+.mesa-prato:focus-within .mesa-overlay {
+  opacity: 1;
+}
+
+.mesa-cat {
+  font-size: 0.6875rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.mesa-overlay strong {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.mesa-overlay span:last-child {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .deg-pacotes {
+    grid-template-columns: 1fr;
+  }
+
+  .mesa-prato {
+    flex-basis: 220px;
+    height: 300px;
+  }
+}
+
 /* Dishes Grid */
 .dishes-section {
-  background-color: var(--color-off-white);
+  background-color: #F6F1E7;
   min-height: 60vh;
 }
 
@@ -54,13 +275,15 @@
 
 .dish-card {
   background-color: var(--color-white);
+  border: 1px solid #EDE6D6;
   overflow: hidden;
   transition: var(--transition);
 }
 
 .dish-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+  box-shadow: 0 12px 28px rgba(201, 169, 110, 0.25);
 }
 
 .dish-card.highlight {
@@ -74,6 +297,7 @@
 }
 
 .dish-image img {
+  filter: saturate(1.1) contrast(1.05);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -82,6 +306,11 @@
 
 .dish-card:hover .dish-image img {
   transform: scale(1.05);
+}
+
+/* card sem foto ganha topo gold pra não ficar chapado */
+.dish-card:not(:has(img)) {
+  border-top: 2px solid var(--color-gold);
 }
 
 .dish-badge {
@@ -110,6 +339,7 @@
 }
 
 .dish-content h3 {
+  color: var(--color-dark);
   font-size: 1.375rem;
   margin: 8px 0;
 }
@@ -124,7 +354,7 @@
   text-align: center;
   margin-top: 48px;
   padding-top: 32px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(201, 169, 110, 0.3);
 }
 
 .cardapio-note p {
@@ -248,5 +478,121 @@
   .filter-tab {
     padding: 8px 12px;
     font-size: 0.6875rem;
+  }
+}
+
+/* Lateral de categorias + paginacao 6 por categoria */
+.cardapio-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.cardapio-lateral {
+  position: sticky;
+  top: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.lateral-btn {
+  background: none;
+  border: none;
+  border-left: 2px solid #E0D5BC;
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 0.8125rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lateral-btn:hover {
+  color: var(--color-dark);
+  border-left-color: var(--color-gold);
+}
+
+.lateral-btn.active {
+  color: var(--color-dark);
+  font-weight: 600;
+  border-left-color: var(--color-gold);
+  background-color: rgba(201, 169, 110, 0.12);
+}
+
+.categoria-bloco {
+  scroll-margin-top: 190px;
+}
+
+.cardapio-lista {
+  scroll-margin-top: 200px;
+  min-width: 0;
+}
+
+.paginacao {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.pag-btn {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  background-color: var(--color-white);
+  border: 1px solid #D8CFB8;
+  color: var(--color-text-light);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pag-btn:hover:not(:disabled) {
+  border-color: var(--color-gold);
+  color: var(--color-dark);
+}
+
+.pag-btn.active {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.pag-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 900px) {
+  .cardapio-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cardapio-lateral {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .lateral-btn {
+    border-left: none;
+    border: 1px solid #D8CFB8;
+    white-space: nowrap;
+    padding: 8px 16px;
+  }
+
+  .lateral-btn.active {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-white);
   }
 }

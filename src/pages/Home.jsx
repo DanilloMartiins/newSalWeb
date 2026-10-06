@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import './Home.css'
+import './Cardapio.css'
 
 const heroImages = [
   '/assets/hero-1.webp',
@@ -21,6 +22,36 @@ const fadeUp = {
 export default function Home() {
   const { t } = useTranslation()
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [zoom, setZoom] = useState(null)
+  const [travado, setTravado] = useState(false)
+  const [prato, setPrato] = useState(null)
+
+  // teaser: foto + nome + desc curta, detalhe fica no cardapio
+  const destaques = [
+    { img: '/assets/cardapio/0421ee01317e.webp', titulo: 'Aligot', desc: t('home.aligotDesc'),
+      alvo: { menu: 'principal', categoria: 'Carnes', chave: 'Lombo de Cordeiro com Aligot' } },
+    { img: '/assets/cardapio/9baf31f2b0df.webp', titulo: 'Tagliatelle', desc: t('home.tagliatelleDesc'),
+      alvo: { menu: 'principal', categoria: 'Massas e Risotos', chave: 'Tagliatelle com Pesto' } },
+    { img: '/assets/cardapio/0ba24f661b23.webp', titulo: 'Polenta Cremosa', desc: t('home.polentaDesc'),
+      alvo: { menu: 'principal', categoria: 'Entradas', chave: 'Polenta Cremosa' } },
+  ]
+
+  // mesma lupa do cardapio (clicou pra sair = nao volta sozinho)
+  function moveLupa(e, i) {
+    if (travado) return
+    const r = e.currentTarget.getBoundingClientRect()
+    setZoom({ i, x: ((e.clientX - r.left) / r.width) * 100, y: ((e.clientY - r.top) / r.height) * 100 })
+  }
+
+  function clicaLupa(i) {
+    if (zoom && zoom.i === i) {
+      setZoom(null)
+      setTravado(true)
+    } else {
+      setZoom({ i, x: 50, y: 50 })
+      setTravado(false)
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -32,6 +63,22 @@ export default function Home() {
     }, 5000)
     return () => clearInterval(interval)
   }, [])
+
+  // modal: esc fecha + trava scroll + zera lupa
+  useEffect(() => {
+    setZoom(null)
+    setTravado(false)
+    if (prato === null) return
+    document.body.style.overflow = 'hidden'
+    function noEsc(e) {
+      if (e.key === 'Escape') setPrato(null)
+    }
+    window.addEventListener('keydown', noEsc)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', noEsc)
+    }
+  }, [prato])
 
   // dados pro Google (enderecos reais da pagina Contato)
   const restaurante = {
@@ -136,56 +183,44 @@ export default function Home() {
           </motion.div>
 
           <div className="featured-grid">
-            <motion.div 
-              className="featured-item"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={fadeUp}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="featured-image">
-                <img src="/assets/aligot.webp" alt="Aligot" loading="lazy" />
-              </div>
-              <div className="featured-info">
-                <h3>Aligot</h3>
-                <p>{t('home.aligotDesc')}</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="featured-item"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={fadeUp}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="featured-image">
-                <img src="/assets/tagliatelli-300x300.webp" alt="Tagliatelle" loading="lazy" />
-              </div>
-              <div className="featured-info">
-                <h3>Tagliatelle</h3>
-                <p>{t('home.tagliatelleDesc')}</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="featured-item"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={fadeUp}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="featured-image">
-                <img src="/assets/polenta-cremosa-com-linguica-300x300.webp" alt="Polenta Cremosa" loading="lazy" />
-              </div>
-              <div className="featured-info">
-                <h3>Polenta Cremosa</h3>
-                <p>{t('home.polentaDesc')}</p>
-              </div>
-            </motion.div>
+            {destaques.map((d, i) => (
+              <motion.div
+                key={d.titulo}
+                className="featured-item featured-clicavel"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                tabIndex={0}
+                onClick={() => setPrato(i)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') setPrato(i)
+                }}
+              >
+                <div
+                  className="featured-image"
+                  onMouseMove={(e) => moveLupa(e, i)}
+                  onMouseLeave={() => { setZoom(null); setTravado(false) }}
+                  onClick={(e) => { e.stopPropagation(); clicaLupa(i) }}
+                >
+                  <img
+                    src={d.img}
+                    alt={d.titulo}
+                    loading="lazy"
+                    style={
+                      zoom && zoom.i === i
+                        ? { transform: 'scale(2)', transformOrigin: `${zoom.x}% ${zoom.y}%` }
+                        : undefined
+                    }
+                  />
+                </div>
+                <div className="featured-info">
+                  <h3>{d.titulo}</h3>
+                  <p>{d.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
           <motion.div 
@@ -202,6 +237,37 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Modal do destaque: teaser + ver no cardapio */}
+      {prato !== null && (
+        <div className="modal-fundo" onClick={() => setPrato(null)}>
+          <div
+            className="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label={destaques[prato].titulo}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="modal-fechar" onClick={() => setPrato(null)} aria-label="Fechar">
+              ✕
+            </button>
+            <div className="modal-foto modal-foto-fixa">
+              <img src={destaques[prato].img} alt={destaques[prato].titulo} />
+            </div>
+            <div className="modal-info">
+              <h2>{destaques[prato].titulo}</h2>
+              <p>{destaques[prato].desc}</p>
+              <Link
+                to="/cardapio"
+                state={{ prato: destaques[prato].alvo }}
+                className="btn btn-primary"
+              >
+                {t('home.verCardapio')}
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Reservation CTA */}
       <section className="reservation-cta">
